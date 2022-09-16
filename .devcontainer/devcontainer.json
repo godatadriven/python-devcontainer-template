@@ -3,6 +3,5 @@
         "dockerfile": "Dockerfile",
         "context": ".."
     },
-    "postCreateCommand": "pip install pytest",
     "remoteUser": "vscode"
 }
