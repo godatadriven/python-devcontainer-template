@@ -8,6 +8,6 @@ RUN pip install -r /tmp/requirements.txt && \
     rm /tmp/requirements.txt
 
 # Install Devcontainer dependencies
-COPY requirements-dev.txt /tmp/requirements-dev.txt
+COPY .devcontainer/requirements-dev.txt /tmp/requirements-dev.txt
 RUN pip install -r /tmp/requirements-dev.txt && \
     rm /tmp/requirements-dev.txt
