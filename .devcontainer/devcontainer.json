@@ -1,5 +1,8 @@
 {
-    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
     "postCreateCommand": "pip install pytest",
     "remoteUser": "vscode"
 }
