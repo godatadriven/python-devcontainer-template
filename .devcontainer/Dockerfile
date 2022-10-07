@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/python:3.10
+FROM python:3.10
 
 # Install Java
 RUN sudo apt update && \

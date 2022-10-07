@@ -1,38 +1,6 @@
 {
     "build": {
         "dockerfile": "Dockerfile",
-        "context": "..",
-        "cacheFrom": "ghcr.io/godatadriven/python-devcontainer-template/devcontainer"
-    },
-
-    "remoteUser": "vscode",
-    
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.python"
-            ],
-            "settings": {
-                "python.testing.pytestArgs": [
-                    "."
-                ],
-                "python.testing.unittestEnabled": false,
-                "python.testing.pytestEnabled": true,
-                "python.formatting.provider": "black",
-                "python.linting.mypyEnabled": true,
-                "python.linting.enabled": true
-            }
-        }
-    },
-
-    "portsAttributes": {
-        "4040": {
-            "label": "SparkUI",
-            "onAutoForward": "notify"
-        }
-    },
-
-    "forwardPorts": [
-        4040
-    ]
+        "context": ".."
+    }
 }
