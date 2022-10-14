@@ -20,7 +20,3 @@ RUN pip install --upgrade pip
 COPY --chown=nonroot:1000 requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt && \
     rm /tmp/requirements.txt
-# Install development dependencies
-COPY --chown=nonroot:1000 requirements-dev.txt /tmp/requirements-dev.txt
-RUN pip install -r /tmp/requirements-dev.txt && \
-    rm /tmp/requirements-dev.txt

@@ -1,0 +1,3 @@
+pytest>=7
+black>=22
+mypy>=0.9
