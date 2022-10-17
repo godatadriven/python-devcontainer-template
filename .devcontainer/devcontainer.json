@@ -1,12 +1,11 @@
 {
     "build": {
         "dockerfile": "Dockerfile",
-        "context": "..",
-        "cacheFrom": "ghcr.io/godatadriven/python-devcontainer-template/devcontainer"
+        "context": ".."
     },
 
-    "remoteUser": "vscode",
-    
+    "remoteUser": "nonroot",
+
     "customizations": {
         "vscode": {
             "extensions": [
