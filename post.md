@@ -128,6 +128,19 @@ Besides starting the Docker image and attaching the terminal to it, VSCode is do
 This then allows you to use your Git repo like you would do normally, without re-authenticating.
 3. **Filesystem mounts**. VSCode automatically takes care of mounting: 1) The folder you are running the Devcontainer from and 2) your VSCode workspace folder.
 
+### Opening your repo directly in a Devcontainer
+Actually, since all instructions on how to configure your dev environment is now defined in a Dockerfile, users can open up your Devcontainer with just one button:
+
+[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
+
+Aint that cool? You can add a button to your own repo like so:
+
+```
+[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
+```
+
+Just modify the GitHub URL ✓.
+
 ## Extending the Devcontainer
 
 We have built a working Devcontainer, that is great! But a couple things are still missing.
@@ -322,6 +335,81 @@ jobs:
     }
 }
 ``` -->
+
+## The final Devcontainer definition
+
+We built the following Devcontainer definitions. First, `devcontainer.json`:
+
+```json
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+
+    "remoteUser": "nonroot",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ],
+            "settings": {
+                "python.testing.pytestArgs": [
+                    "."
+                ],
+                "python.testing.unittestEnabled": false,
+                "python.testing.pytestEnabled": true,
+                "python.formatting.provider": "black",
+                "python.linting.mypyEnabled": true,
+                "python.linting.enabled": true
+            }
+        }
+    },
+
+    "portsAttributes": {
+        "4040": {
+            "label": "SparkUI",
+            "onAutoForward": "notify"
+        }
+    },
+
+    "forwardPorts": [
+        4040
+    ]
+}
+```
+
+And our `Dockerfile`:
+
+```docker
+FROM python:3.10
+
+# Install Java
+RUN apt update && \
+    apt install -y sudo && \
+    sudo apt install default-jdk -y
+
+# Add non-root user
+ARG USERNAME=nonroot
+RUN groupadd --gid 1000 $USERNAME && \
+    useradd --uid 1000 --gid 1000 -m $USERNAME
+## Make sure to reflect new user in PATH
+ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
+USER $USERNAME
+
+## Pip dependencies
+# Upgrade pip
+RUN pip install --upgrade pip
+# Install production dependencies
+COPY --chown=nonroot:1000 requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt && \
+    rm /tmp/requirements.txt
+# Install development dependencies
+COPY --chown=nonroot:1000 requirements-dev.txt /tmp/requirements-dev.txt
+RUN pip install -r /tmp/requirements-dev.txt && \
+    rm /tmp/requirements-dev.txt
+```
 
 ## Devcontainer architecture: Three environments 🎁
 
