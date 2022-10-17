@@ -4,9 +4,7 @@
 
 Devcontainers have seen massive developments and adoption over the past years. VSCode provides support for using Devcontainers and GitHub has been pushing their Codespaces: their completely managed remote Devcontainer service. Are you excited yet? Let's dive in. -->
 
-## The challenge: onboarding newcomers & mismatched environments
-
-> 📢 Everything discussed is accessible in the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo
+<!-- ## The challenge: onboarding newcomers & mismatched environments -->
 
 Take the following scenario. Your company uses Apache Spark to process data, and your team has pyspark set up in a Python project. The codebase is built on a specific Python version, using a certain Java installation, and an accompanying pyspark version that works with the former. To onboard a new member, you will need to pass a list of instructions the developer needs to follow carefully in order to get their setup working. But not everyone might run this on the same laptop environment: different hardware, different operating systems. This is getting challenging.
 
@@ -23,6 +21,8 @@ Devcontainers can help us:
 
 Let’s explore how we can set up a Devcontainer for your Python project!
 
+> 📢 All steps can be found in the various branches of the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo
+
 ## Creating your first Devcontainer
 
 <!-- > Step 1 -->
@@ -33,13 +33,7 @@ Let’s explore how we can set up a Devcontainer for your Python project!
 
 ### 📌 Recap
 
-To recap, we are trying to create a dev environment that installs the following:
-
-- Python
-- Pyspark
-- Java
-
-And we want to do so *automatically*, that is, inside a Docker image.
+To recap, we are trying to create a dev environment that installs: 1) Java, 2) Python and 3) pyspark. And we want to do so *automatically*, that is, inside a Docker image.
 
 ### Project structure
 
@@ -113,13 +107,7 @@ On top of `python:3.10`, we install Java and the required pip packages.
 
 The `.devcontainer` folder in place, now it’s time to open our Devcontainer.
 
-First, make sure you have the Dev Containers extension installed in VSCode (previously called “Remote - Containers”:
-
-[Install Dev Containers VSCode Extension](vscode:extension/ms-vscode-remote.remote-containers)
-
-[Dev Containers - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-
-If you open your repo again, the extension should already detect your Devcontainer:
+First, make sure you have the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed in VSCode (previously called “Remote - Containers”. That done, if you open your repo again, the extension should already detect your Devcontainer:
 
 ![folder contains a dev container config file](https://godatadriven.com/wp-content/uploads/2022/10/folder-contains-a-dev-container-config-file.png)
 
@@ -136,7 +124,7 @@ Your VSCode is now connected to the Docker container 🙌🏻:
 Besides starting the Docker image and attaching the terminal to it, VSCode is doing a couple more things:
 
 1. [**VSCode Server**](https://code.visualstudio.com/docs/remote/vscode-server) is being installed on your Devcontainer. VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. For example, install and run extensions.
-2. **Config is copied** over**.** Config like `~/.gitconfig` and `~/.ssh/known_hosts` are copied over to their respective locations in the container.
+2. **Config is copied** over. Config like `~/.gitconfig` and `~/.ssh/known_hosts` are copied over to their respective locations in the container.
 This then allows you to use your Git repo like you would do normally, without re-authenticating.
 3. **Filesystem mounts**. VSCode automatically takes care of mounting: 1) The folder you are running the Devcontainer from and 2) your VSCode workspace folder.
 
@@ -151,6 +139,8 @@ We have built a working Devcontainer, that is great! But a couple things are sti
 If you `pip install` a new package, you will see the following message:
 
 ![The warning message: “*WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: [https://pip.pypa.io/warnings/venv](https://pip.pypa.io/warnings/venv)*](https://godatadriven.com/wp-content/uploads/2022/10/running-pip-as-root.png)
+
+Indeed, it is not recommended to develop as a root-user. It is in fact considered a good-practice to create a different user with less rights to run in production. So let's go ahead and create a user for this scenario.
 
 > Running your application as a non-root user is recommended even in production (since it is more secure), so this is a good idea even if you're reusing an existing Dockerfile.
 — [Add non-root user | VSCode Docs](https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user)
@@ -177,34 +167,11 @@ Add the following property to `devcontainer.json`:
     "remoteUser": "nonroot"
 ```
 
-### ~~Installing ZSH~~
-
-→ Put in **Gist** and share in extra resources.
-
-```bash
-# Install ZSH
-USER root
-RUN apt update && \
-    apt install -y zsh && \
-    chsh -s $(which zsh)
-
-# Install Oh My ZSH
-USER $USERNAME
-RUN wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O - | zsh || true && \
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-
-ENTRYPOINT ["/bin/zsh"]
-```
-
-```json
-
-```
+That's great! When we now start the container we should 
 
 ### Passing custom VSCode settings
 
 <!-- > Step 3 -->
-
-<excalidraw drawing of overriding settings>
 
 Our Devcontainer is still a bit bland, without extensions and settings. Besides any custom extensions a user might want to install, we can install some for them by default already. We can define such settings in `customizations.vscode`:
 
@@ -253,25 +220,28 @@ When we now run our code, we get a notification we can open Spark UI in the brow
 
 ![open Spark UI in the browser](https://godatadriven.com/wp-content/uploads/2022/10/application-running-on-port-4040.png)
 
+Resulting in the Spark UI like we know it:
+
+![spark UI in the browser](https://godatadriven.com/wp-content/uploads/2022/10/spark-ui-visible-in-localhost-4040.png)
+
+✨
+
 ## Running our CI in the Devcontainer
 
-<!-- > Step 5 -->
-> 
+Wouldn't it be convenient if we could re-use our Devcontainer to run our Continuous Integration (CI) pipeline as well? Indeed, we can do this with Devcontainers. Similarly to how the Devcontainer image is built locally using `docker build`, the same can be done _within_ a CI/CD pipeline. There are two basic options:
 
-2 options:
-
-1. ~~Build image periodically, then use in QA step~~
-
-2. ~~Build image as part of QA step~~
-
-1. Using `devcontainers/ci`
+1. Build the Docker image _within_ the CI/CD pipeline
 2. Prebuilding the image
 
-[comment]: <> (Include a nice image of building and then using the image in CI)
+To pre-build the image, the build step will need to run either periodically or whenever the Docker definition has changed. Since this adds quite some complexity let's dive into building the Devcontainer as part of the CI/CD pipeline first (for pre-building the image, see the 'Awesome resources' section). We will do so using **GitHub Actions**.
 
 ### Using `devcontainers/ci`
 
-https://github.com/devcontainers/ci
+Luckily, a GitHub Action was already setup for us to do exactly this:
+
+[https://github.com/devcontainers/ci](https://github.com/devcontainers/ci)
+
+To now build, push and run a command in the Devcontainer is as easy as:
 
 ```yaml
 name: Python app
@@ -304,9 +274,13 @@ jobs:
           runCmd: pytest .
 ```
 
+That's great! Whenever this workflow runs on your main branch, the image will be pushed to the configured registry; in this case GitHub Container Registry (GHCR). See below a trace of the executed GitHub Action:
+
 ![running-ci-in-the-devcontainer-github-actions](https://godatadriven.com/wp-content/uploads/2022/10/running-ci-in-the-devcontainer-github-actions.png)
 
-### Pre-building the image
+Awesome!
+
+<!-- ### Pre-building the image
 
 ```yaml
 name: Build image
@@ -347,61 +321,72 @@ jobs:
         "cacheFrom": "ghcr.io/godatadriven/python-devcontainer-template/devcontainer"
     }
 }
-```
+``` -->
 
 ## Devcontainer architecture: Three environments 🎁
 
-With the CI now set up, we can see we basically have 3 environments:
+With the CI now set up, we can find that we can re-use the same Docker image for two purposes. For local development and running our quality checks. And, if we were to deploy this application to production, we could configure the Devcontainer to use our production image as a base, and install extra dependencies on top. If we would want to optimise the CI image to be as lightweight as possible, we could also strip off any extra dependencies that we do not require in the CI environment; things like extra CLI tooling, a better shell like ZSH, and so forth.
+
+In fact, this sets us up for having 3 different images for our entire lifecycle. One for Development, one for CI, and finally one for production. This can be visualized like so:
 
 ![three-environments-docker-images-devcontainer](https://godatadriven.com/wp-content/uploads/2022/10/three-environments-docker-images-devcontainer-setup.png)
 
+So, we can see, when using a Devcontainer you can re-use your production image and build on top of it. Install extra tooling, make sure it can talk to VSCode, and you're done 🙏🏻. 
+
 ## Going further 🔮
 There's lots of other resources to explore; Devcontainers are well-documented and there are many posts about it. If you're up for more, let's see what else you can do.
-### Using Devcontainer features
+### Devcontainer features
 
-Devcontainer [features](https://containers.dev/features) allow you to easily extend your Docker definition with common additions.
+Devcontainer [features](https://containers.dev/features) allow you to easily extend your Docker definition with common additions. Some useful features are:
 
-<!-- ~~Then, you will have to go through all the CLI steps. Fortunately, though, there is a Devcontainer ‘*feature*’ that does installs a non-root user for us.~~
+- [Common Debian Utilities](https://github.com/devcontainers/features/tree/main/src/common-utils) (Installs ZSH using _Oh My ZSH_, a non-root user and useful CLI tools like `curl`)
+- [AWS CLI](https://github.com/devcontainers/features/tree/main/src/aws-cli)
+- [Azure CLI](https://github.com/devcontainers/features/tree/main/src/azure-cli)
+- [Git](https://github.com/devcontainers/features/tree/main/src/git)
+- [Node.js](https://github.com/devcontainers/features/tree/main/src/node)
+- [Python](https://github.com/devcontainers/features/tree/main/src/python)
+- [Java](https://github.com/devcontainers/features/tree/main/src/java)
 
-[~~https://github.com/devcontainers/features/tree/main/src/common-utils~~](https://github.com/devcontainers/features/tree/main/src/common-utils) -->
+### Devcontainer templates
+On the official Devcontainer spefication website there are **loads** of templates available. Good chance (part of) your setup is in there. A nice way to get a head start in building your Devcontainer, or to get started quickly.
 
-<aside>
-💡 ~~Be advised, the above specifications are brand-new (as of writing, October 2022), and can be prone to change.~~
-
-</aside>
-
-### Using one of Microsoft’s base images
-
-→ explain we can better use `[mcr.microsoft.com/vscode/devcontainers/python](http://mcr.microsoft.com/vscode/devcontainers/python):3.10` instead of `python:3.10`
+See: https://containers.dev/templates
 
 ### Mounting directories
+Re-authenticating your CLI tools is annoying. So one trick is to mount your AWS/Azure/GCP credentials from your local computer into your Devcontainer. This way, authentications done in either environment are shared to the other. You can easily do this by adding this to `devcontainer.json`:
 
-- AWS credentials
-- Azure credentials
-- GCP credentials
+```json
+  "mounts": [
+    "source=/Users/<your_username>/.aws,target=/home/nonroot/.aws,type=bind,consistency=cached"
+  ]
+```
 
-### Docker compose
+^ the above example mounts your AWS credentials, but other the auth details from cloud providers (GCP / Azure) could be mounted similarly. 
+
+<!-- ### Docker compose -->
 
 ### Awesome resources
 
-- https://github.com/manekinekko/awesome-devcontainers
-- https://github.com/devcontainers/ci
-- https://github.com/devcontainers/cli
-- https://containers.dev/
-- [https://github.com/devcontainers/images](https://github.com/devcontainers/images)
+- [devcontainers/ci](https://github.com/devcontainers/ci). Run your CI in your Devcontainers. Built on the [Devcontainer CLI](https://github.com/devcontainers/cli).
+- [https://containers.dev/](https://containers.dev/). The official Devcontainer specification.
+- [devcontainers/images](https://github.com/devcontainers/images). A collection of ready-to-use Devcontainer images.
+- [Add a non-root user to a container](https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user). More explanations & instructions for adding a non-root user to your `Dockerfile` and `devcontainer.json`.
+- [Pre-building dev container images](https://code.visualstudio.com/docs/remote/containers#_prebuilding-dev-container-images)
+- [awesome-devcontainers](https://github.com/manekinekko/awesome-devcontainers). A repo pointing to yet even more awesome resources.
 
 ## Concluding
+Devcontainers have proven useful to more easily onboard new joiners and align the development environments with your team. Devcontainers are very well supported for **VSCode** but are now being standardized in an [open specification](https://containers.dev/). Even though it will probably still take a while to see wide adoption, the specification is a good candidate for the standardization of Devcontainers.
+
+🙌🏻
 
 ## About
 
-This blogpost is written by Jeroen Overschie, working at GoDataDriven.
+This blogpost is written by [Jeroen Overschie](https://www.github.com/dunnkers), working at GoDataDriven.
+
+&nbsp;
 
 ---
+
+&nbsp;
 
 GoDataDriven is a specialist in Data and AI, providing high-quality consultancy services for clients in The Netherlands and beyond. Do you feel right at home in the Data & AI space and are you interested? Look at our [Hiring](https://godatadriven.com/careers/) page.
-
----
-
-Inspiration
-
-[Microsoft’s devcontainer.json: Just for VS Code or an evolving standard? •](https://www.notion.so/Microsoft-s-devcontainer-json-Just-for-VS-Code-or-an-evolving-standard-d7a4846882d040429c5088c719b36d91)
