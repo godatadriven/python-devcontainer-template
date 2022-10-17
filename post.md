@@ -1,34 +1,31 @@
-# Speed up your development using Devcontainers 🐳
+# How to create a Devcontainer for your Python project 🐳
 
-Created: October 6, 2022 3:32 PM
+<!-- Docker has been around for a while now, revolutionizing the way we think about packaging and deploying software. But there are still more opportunities in store for us. Whereas it was already possible to streamline the CI/CD with the production environment by reusing the same image bases, the development environment often still diverged. And this is where Devcontainers can offer a solution. By connecting your IDE to the same container used in production, we can be sure our environment is aligned across all places.
 
-Docker has been around for a while now, revolutionizing the way we think about packaging and deploying software. But there are still more opportunities in store for us. Whereas it was already possible to streamline the CI/CD with the production environment by reusing the same image bases, the development environment often still diverged. And this is where Devcontainers can offer a solution. By connecting your IDE to the same container used in production, we can be sure our environment is aligned across all places.
-
-Devcontainers have seen massive developments and adoption over the past years. VSCode provides support for using Devcontainers and GitHub has been pushing their Codespaces: their completely managed remote Devcontainer service. Are you excited yet? Let's dive in.
+Devcontainers have seen massive developments and adoption over the past years. VSCode provides support for using Devcontainers and GitHub has been pushing their Codespaces: their completely managed remote Devcontainer service. Are you excited yet? Let's dive in. -->
 
 ## The challenge: onboarding newcomers & mismatched environments
 
-<aside>
-📢 Everything discussed is accessible in the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo
-
-</aside>
+> 📢 Everything discussed is accessible in the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo
 
 Take the following scenario. Your company uses Apache Spark to process data, and your team has pyspark set up in a Python project. The codebase is built on a specific Python version, using a certain Java installation, and an accompanying pyspark version that works with the former. To onboard a new member, you will need to pass a list of instructions the developer needs to follow carefully in order to get their setup working. But not everyone might run this on the same laptop environment: different hardware, different operating systems. This is getting challenging.
 
 But the setup is a one-off, right? Just go through the setup once and you’ll be good. Not entirely. Your code environment will change over time: your team will probably install, update or remove packages during the project’s development. This means that if a developer creates a new feature and changes its own environment to do so; it also needs to make sure that the other team members change theirs and that the production environment is updated accordingly. This makes it easy to get mis-aligned environments: between developers, between development and production.
 
-We can do better than this! Instead of giving other developers a setup document, let’s make sure we also create formal instructions so we can *automatically* set up the development environment. Docker lets us do exactly this – on which Devcontainers are built on top of. ~~Devcontainers to the rescue ⛑~~. Devcontainers can help us:
+We can do better than this! Instead of giving other developers a setup document, let’s make sure we also create formal instructions so we can *automatically* set up the development environment. Docker lets us do exactly this – on which Devcontainers are built on top of. 
+<!-- ~~Devcontainers to the rescue ⛑~~.  -->
+Devcontainers can help us:
 
 - ⚡️ Instantly onboard new team members onto your project
 - 🔄 Get a reproducible development environment
 - 👨‍👩‍👧‍👦 Better align the environments between team members
-- 🏃‍♂️⏱ Keeping your dev environment up-to-date & reproducible saves you team going into production later
+- ⏱ Keeping your dev environment up-to-date & reproducible saves you team going into production later
 
 Let’s explore how we can set up a Devcontainer for your Python project!
 
 ## Creating your first Devcontainer
 
-> Step 1
+<!-- > Step 1 -->
 > 
 
 > This tutorial is focused on **VSCode**. Other IDE’s like PyCharm support running in Docker containers but support is less comprehensive than on VSCode.
@@ -149,33 +146,20 @@ We have built a working Devcontainer, that is great! But a couple things are sti
 
 ### Installing a non-root user
 
-> Step 2
-> 
+<!-- > Step 2 -->
 
 If you `pip install` a new package, you will see the following message:
 
 ![The warning message: “*WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: [https://pip.pypa.io/warnings/venv](https://pip.pypa.io/warnings/venv)*](https://godatadriven.com/wp-content/uploads/2022/10/running-pip-as-root.png)
 
-The warning message: “*WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: [https://pip.pypa.io/warnings/venv](https://pip.pypa.io/warnings/venv)*”
-
 > Running your application as a non-root user is recommended even in production (since it is more secure), so this is a good idea even if you're reusing an existing Dockerfile.
 — [Add non-root user | VSCode Docs](https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user)
-> 
 
-This is because we are connecting to the container as the `root` user. This is not a good practice, so let’s fix this. We can add a non-root user by running:
+<!-- This is because we are connecting to the container as the `root` user. This is not a good practice, so let’s fix this. We can add a non-root user by running:
 
 ```bash
 sudo adduser my_custom_non_root_user
-```
-
-~~Then, you will have to go through all the CLI steps. Fortunately, though, there is a Devcontainer ‘*feature*’ that does installs a non-root user for us.~~
-
-[~~https://github.com/devcontainers/features/tree/main/src/common-utils~~](https://github.com/devcontainers/features/tree/main/src/common-utils)
-
-<aside>
-💡 ~~Be advised, the above specifications are brand-new (as of writing, October 2022), and can be prone to change.~~
-
-</aside>
+``` -->
 
 ```bash
 # Add non-root user
@@ -218,8 +202,7 @@ ENTRYPOINT ["/bin/zsh"]
 
 ### Passing custom VSCode settings
 
-> Step 3
-> 
+<!-- > Step 3 -->
 
 <excalidraw drawing of overriding settings>
 
@@ -249,8 +232,7 @@ The defined extensions are always installed in the Devcontainer. However, the de
 
 ### Accessing Spark UI
 
-> Step 4
-> 
+<!-- > Step 4 -->
 
 Since we are using pyspark, it would be nice to be able to access **Spark UI**. When we start a Spark session, VSCode will ask whether you want to forward the specific port. Since we already know this is Spark UI, we can do so automatically:
 
@@ -273,7 +255,7 @@ When we now run our code, we get a notification we can open Spark UI in the brow
 
 ## Running our CI in the Devcontainer
 
-> Step 5
+<!-- > Step 5 -->
 > 
 
 2 options:
@@ -374,8 +356,19 @@ With the CI now set up, we can see we basically have 3 environments:
 ![three-environments-docker-images-devcontainer](https://godatadriven.com/wp-content/uploads/2022/10/three-environments-docker-images-devcontainer-setup.png)
 
 ## Going further 🔮
-
+There's lots of other resources to explore; Devcontainers are well-documented and there are many posts about it. If you're up for more, let's see what else you can do.
 ### Using Devcontainer features
+
+Devcontainer [features](https://containers.dev/features) allow you to easily extend your Docker definition with common additions.
+
+<!-- ~~Then, you will have to go through all the CLI steps. Fortunately, though, there is a Devcontainer ‘*feature*’ that does installs a non-root user for us.~~
+
+[~~https://github.com/devcontainers/features/tree/main/src/common-utils~~](https://github.com/devcontainers/features/tree/main/src/common-utils) -->
+
+<aside>
+💡 ~~Be advised, the above specifications are brand-new (as of writing, October 2022), and can be prone to change.~~
+
+</aside>
 
 ### Using one of Microsoft’s base images
 
