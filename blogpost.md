@@ -19,14 +19,8 @@ Devcontainers can help us:
 - 👨‍👩‍👧‍👦 Better align the environments between team members
 - ⏱ Keeping your dev environment up-to-date & reproducible saves you team going into production later
 
-What kind of README would you rather like?
 
-Manual installation             |  Using a Devcontainer 🙌🏻
-:-------------------------:|:-------------------------:
-![](https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-manual.png)  |  ![](https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-devcontainer.png)
-
-Indeed, the right one. Let’s explore how we can set up a Devcontainer for your Python project!
-
+Let’s explore how we can set up a Devcontainer for your Python project!
 
 ## Creating your first Devcontainer
 
@@ -140,6 +134,12 @@ Aint that cool? You can add a button to your own repo like so:
 ```
 
 Just modify the GitHub URL ✓.
+
+That said, we can see having built a Devcontainer can make our README massively more readable. What kind of README would you rather like?
+
+Manual installation             |  Using a Devcontainer 🙌🏻
+:-------------------------:|:-------------------------:
+![](https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-manual.png)  |  ![](https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-devcontainer.png)
 
 ## Extending the Devcontainer
 
