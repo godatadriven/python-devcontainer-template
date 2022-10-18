@@ -60,8 +60,6 @@ Your Devcontainer spec will live inside the `.devcontainer` folder. There will b
 
 Create a new file called `devcontainer.json`:
 
-`.devcontainer/devcontainer.json`:
-
 ```json
 {
     "build": {
@@ -75,8 +73,6 @@ This does basically means: as a base for our Devcontainer, use the `Dockerfile` 
 
 So how does this `Dockerfile` look like?
 
-`.devcontainer/Dockerfile`:
-
 ```docker
 FROM python:3.10
 
@@ -85,21 +81,20 @@ RUN apt update && \
     apt install -y sudo && \
     sudo apt install default-jdk -y
 
+## Pip dependencies
 # Upgrade pip
 RUN pip install --upgrade pip
-
-# Install pip dependencies
+# Install production dependencies
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt && \
     rm /tmp/requirements.txt
-
-# Install Devcontainer dependencies
+# Install development dependencies
 COPY requirements-dev.txt /tmp/requirements-dev.txt
 RUN pip install -r /tmp/requirements-dev.txt && \
     rm /tmp/requirements-dev.txt
 ```
 
-We are building our image on top of `python:3.10`, which is a Debian-based image. This is one of the Linux distributions that a Devcontainer can be built on. The main requirement is that Node.js should be able to run: VSCode automatically installs VSCode Server on the machine. For an extensive list of supported distributions, see [“Remote Development with Linux”](https://code.visualstudio.com/docs/remote/linux).
+We are building our image on top of `python:3.10`, which is a Debian-based image. This is one of the Linux distributions that a Devcontainer can be built on. The main requirement is that **Node.js** should be able to run: VSCode automatically installs VSCode Server on the machine. For an extensive list of supported distributions, see [“Remote Development with Linux”](https://code.visualstudio.com/docs/remote/linux).
 
 On top of `python:3.10`, we install Java and the required pip packages.
 
@@ -143,7 +138,14 @@ Just modify the GitHub URL ✓.
 
 ## Extending the Devcontainer
 
-We have built a working Devcontainer, that is great! But a couple things are still missing.
+We have built a working Devcontainer, that is great! But a couple things are still missing. We would like to:
+
+- Install a non-root user for extra safety and good-practi
+- Pass in custom VSCode settings and install extensions by default
+- Be able to access Spark UI (port 4040)
+- Run CI in the Devcontainer
+
+Let's see how.
 
 ### Installing a non-root user
 
@@ -155,8 +157,8 @@ If you `pip install` a new package, you will see the following message:
 
 Indeed, it is not recommended to develop as a root-user. It is in fact considered a good-practice to create a different user with less rights to run in production. So let's go ahead and create a user for this scenario.
 
-> Running your application as a non-root user is recommended even in production (since it is more secure), so this is a good idea even if you're reusing an existing Dockerfile.
-— [Add non-root user | VSCode Docs](https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user)
+<!-- > Running your application as a non-root user is recommended even in production (since it is more secure), so this is a good idea even if you're reusing an existing Dockerfile.
+— [Add non-root user | VSCode Docs](https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user) -->
 
 <!-- This is because we are connecting to the container as the `root` user. This is not a good practice, so let’s fix this. We can add a non-root user by running:
 
@@ -180,7 +182,7 @@ Add the following property to `devcontainer.json`:
     "remoteUser": "nonroot"
 ```
 
-That's great! When we now start the container we should 
+That's great! When we now start the container we should connect as the user `nonroot`.
 
 ### Passing custom VSCode settings
 
@@ -469,7 +471,7 @@ Devcontainers have proven useful to more easily onboard new joiners and align th
 
 ## About
 
-This blogpost is written by [Jeroen Overschie](https://www.github.com/dunnkers), working at GoDataDriven.
+This blogpost is written by [Jeroen Overschie](https://www.github.com/dunnkers), working at [GoDataDriven](https://godatadriven.com/).
 
 &nbsp;
 
