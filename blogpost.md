@@ -21,15 +21,14 @@ Devcontainers can help us:
 
 Let’s explore how we can set up a Devcontainer for your Python project!
 
-> 📢 All steps can be found in the various branches of the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo
 
 ## Creating your first Devcontainer
 
+> 📢 All steps can be found in the various branches of the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo
+
 <!-- > Step 1 -->
-> 
 
 > This tutorial is focused on **VSCode**. Other IDE’s like PyCharm support running in Docker containers but support is less comprehensive than on VSCode.
-> 
 
 ### 📌 Recap
 
