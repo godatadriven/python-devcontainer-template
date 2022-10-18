@@ -19,7 +19,13 @@ Devcontainers can help us:
 - 👨‍👩‍👧‍👦 Better align the environments between team members
 - ⏱ Keeping your dev environment up-to-date & reproducible saves you team going into production later
 
-Let’s explore how we can set up a Devcontainer for your Python project!
+What kind of README would you rather like?
+
+Manual installation             |  Using a Devcontainer 🙌🏻
+:-------------------------:|:-------------------------:
+![](https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-manual.png)  |  ![](https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-devcontainer.png)
+
+Indeed, the right one. Let’s explore how we can set up a Devcontainer for your Python project!
 
 
 ## Creating your first Devcontainer
