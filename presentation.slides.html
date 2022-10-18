@@ -14874,7 +14874,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15068,36 +15068,13 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li><a href="https://code.visualstudio.com/docs/remote/vscode-server"><strong>VSCode Server</strong></a> is being installed on your Devcontainer. VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. For example, install and run extensions.</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol>
-<li><strong>Config is copied</strong> over. Config like <code>~/.gitconfig</code> and <code>~/.ssh/known_hosts</code> are copied over to their respective locations in the container.
-This then allows you to use your Git repo like you would do normally, without re-authenticating.</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol>
-<li><strong>Filesystem mounts</strong>. VSCode automatically takes care of mounting: 1) The folder you are running the Devcontainer from and 2) your VSCode workspace folder.</li>
+<li><p><a href="https://code.visualstudio.com/docs/remote/vscode-server"><strong>VSCode Server</strong></a> is being installed on your Devcontainer. VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. For example, install and run extensions.</p>
+</li>
+<li><p><strong>Config is copied</strong> over. Config like <code>~/.gitconfig</code> and <code>~/.ssh/known_hosts</code> are copied over to their respective locations in the container.
+This then allows you to use your Git repo like you would do normally, without re-authenticating.</p>
+</li>
+<li><p><strong>Filesystem mounts</strong>. VSCode automatically takes care of mounting: 1) The folder you are running the Devcontainer from and 2) your VSCode workspace folder.</p>
+</li>
 </ol>
 
 </div>
@@ -15124,8 +15101,8 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Aint that cool? You can add a button to your own repo like so:</p>
-
-<pre><code>[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)</code></pre>
+<div class="highlight"><pre><span></span>[<span class="nt">![Open in Remote - Containers</span>](<span class="na">https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode</span>)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
+</pre></div>
 <p>Just modify the GitHub URL ✓.</p>
 
 </div>
@@ -15415,6 +15392,7 @@ USER <span class="nv">$USERNAME</span>
 <li>Build the Docker image <em>within</em> the CI/CD pipeline</li>
 <li>Prebuilding the image</li>
 </ol>
+<p>Let's see about option number (1).</p>
 
 </div>
 </div>
@@ -15498,7 +15476,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</aside></section></section><section><section>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15700,11 +15678,12 @@ USER <span class="nv">$USERNAME</span>
 <p>💡 Pro tip: mount your AWS/GCP/Azure credentials</p>
 </li>
 </ul>
+<p>... and much more:</p>
 
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15730,8 +15709,37 @@ USER <span class="nv">$USERNAME</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Concluding">Concluding<a class="anchor-link" href="#Concluding">&#182;</a></h2><p>Devcontainers have proven useful to more easily onboard new joiners and align the development environments with your team. Devcontainers are very well supported for <strong>VSCode</strong> but are now being standardized in an <a href="https://containers.dev/">open specification</a>. Even though it will probably still take a while to see wide adoption, the specification is a good candidate for the standardization of Devcontainers.</p>
-<p>🙌🏻</p>
+<h2 id="Concluding">Concluding<a class="anchor-link" href="#Concluding">&#182;</a></h2><p>Devcontainers have proven useful to:</p>
+<ul>
+<li>⚡️ Instantly onboard new team members onto your project</li>
+<li>🔄 Get a reproducible development environment</li>
+<li>👨‍👩‍👧‍👦 Better align the environments between team members</li>
+<li>⏱ Keeping your dev environment up-to-date &amp; reproducible saves you team going into production later</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Devcontainers are very well supported for <strong>VSCode</strong> but are now being standardized in an <a href="https://containers.dev/">open specification</a>. Even though it will probably still take a while to see wide adoption, the specification is a good candidate for the standardization of Devcontainers.</p>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Thanks! 🙌🏻</p>
 
 </div>
 </div>
@@ -15750,7 +15758,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</aside></section></section>
+</aside></div></section></section>
 </div>
 </div>
 </body>
