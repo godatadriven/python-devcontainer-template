@@ -14871,12 +14871,25 @@ div.jp-OutputPrompt {
 </tr>
 </tbody>
 </table>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Indeed, the right one. So, let's see how we can build a Devcontainer!</p>
 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15154,7 +15167,7 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Install a non-root user for extra safety and good-practi</li>
+<li>Install a non-root user for extra safety and good-practice</li>
 </ul>
 
 </div>
@@ -15245,6 +15258,17 @@ RUN groupadd --gid <span class="m">1000</span> <span class="nv">$USERNAME</span>
 ENV <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/</span><span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span><span class="s2">/.local/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
 USER <span class="nv">$USERNAME</span>
 </pre></div>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Add the following property to <code>devcontainer.json</code>:</p>
 <div class="highlight"><pre><span></span><span class="nt">&quot;remoteUser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonroot&quot;</span><span class="w"></span>
 </pre></div>
@@ -15252,7 +15276,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15635,7 +15659,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Devcontainer-architecture:-Three-environments-%F0%9F%8E%81">Devcontainer architecture: Three environments &#127873;<a class="anchor-link" href="#Devcontainer-architecture:-Three-environments-%F0%9F%8E%81">&#182;</a></h2><p>The above idea sets us up for having 3 different images for our entire lifecycle. One for Development, one for CI, and finally one for production.</p>
+<h2 id="Three-environments-%F0%9F%8E%81">Three environments &#127873;<a class="anchor-link" href="#Three-environments-%F0%9F%8E%81">&#182;</a></h2><p>The above idea sets us up for having 3 different images for our entire lifecycle. One for Development, one for CI, and finally one for production.</p>
 
 </div>
 </div>
@@ -15647,7 +15671,6 @@ USER <span class="nv">$USERNAME</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This can be visualized like so:</p>
 <p><img src="https://godatadriven.com/wp-content/uploads/2022/10/three-environments-docker-images-devcontainer-setup.png" alt="three-environments-docker-images-devcontainer"></p>
 
 </div>
