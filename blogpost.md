@@ -14,8 +14,8 @@ We can do better than this! Instead of giving other developers a setup document,
 <!-- ~~Devcontainers to the rescue ⛑~~.  -->
 Devcontainers can help us:
 
-- ⚡️ Instantly onboard new team members onto your project
 - 🔄 Get a reproducible development environment
+- ⚡️ Instantly onboard new team members onto your project
 - 👨‍👩‍👧‍👦 Better align the environments between team members
 - ⏱ Keeping your dev environment up-to-date & reproducible saves you team going into production later
 
