@@ -7,10 +7,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>presentation slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>How to create a Devcontainer for your Python project 🐳 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/reveal.css">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -14644,50 +14644,38 @@ div.jp-OutputPrompt {
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><!-- Reveal Theme -->
-<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/theme/simple.css" id="theme">
 
 </head>
 
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="How-to-create-a-Devcontainer-for-your-Python-project-%F0%9F%90%B3">How to create a Devcontainer for your Python project &#128051;<a class="anchor-link" href="#How-to-create-a-Devcontainer-for-your-Python-project-%F0%9F%90%B3">&#182;</a></h1><p><img src="https://godatadriven.com/wp-content/uploads/2022/09/without-ship-taller-img.png" alt="Docker ship background wallpaper image"></p>
+<h1 id="How-to-create-a-Devcontainer-for-your-Python-project-%F0%9F%90%B3">How to create a Devcontainer for your Python project &#128051;<a class="anchor-link" href="#How-to-create-a-Devcontainer-for-your-Python-project-%F0%9F%90%B3">&#182;</a></h1><p><img src="https://godatadriven.com/wp-content/uploads/2022/09/without-ship-taller-img.png" alt="Docker ship background wallpaper image" /></p>
 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="The-use-case">The use case<a class="anchor-link" href="#The-use-case">&#182;</a></h2><p>You are a big shoe-selling company, and are interested in which stores do the best.</p>
+<h2 id="The-use-case">The use case<a class="anchor-link" href="#The-use-case">&#182;</a></h2><p>You are assigned to setup a new repo for a team. The requirements are as follows:</p>
 
 </div>
 </div>
 </div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We want to have:</p>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14701,7 +14689,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14709,13 +14697,13 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>using <code>pyspark</code> </li>
+<li>using <code>pyspark</code></li>
 </ul>
 
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14729,7 +14717,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14741,7 +14729,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14755,7 +14743,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14769,7 +14757,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14783,7 +14771,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14795,19 +14783,60 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>"I never get to the actual work because I am always configuring Python virtual environments or setting up Poetry" — Python Developer, source and date unknown</p>
+<h1 id="%E2%80%9CI-never-get-to-the-actual-work-because-I-am-always-configuring-Python-virtual-environments%E2%80%9D">&#8220;I never get to the actual work because I am always configuring Python virtual environments&#8221;<a class="anchor-link" href="#%E2%80%9CI-never-get-to-the-actual-work-because-I-am-always-configuring-Python-virtual-environments%E2%80%9D">&#182;</a></h1><p>— Python Developer, source and date unknown</p>
 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table style="background-color: #F5F5F5">
+    <tr style="background: none">
+        <td style="border: none">
+            <img src="./images/presentation/teams-logo-32.png" />
+        </td>
+    </tr>
+    <tr style="background: none">
+        <td style="border: none">
+            <img class="fragment" src="./images/presentation/messed-up-pyenv.png" />
+        </td>
+        <td style="border: none">
+        </td>
+        <td style="border: none">
+            <img class="fragment" src="images/presentation/project-deps-dont-work-on-modern-os.png" />
+        </td>
+    </tr>
+    <tr style="background: none">
+        <td style="border: none">
+            <img class="fragment" src="./images/presentation/difficulties-dockerizing-and-going-into-production.png" />
+        </td>
+        <td style="border: none" colspan="2">
+            <img class="fragment" src="./images/presentation/misaligned-environments.png" />
+        </td>
+    </tr>
+    <tr style="background: none">
+        <td style="border: none" colspan="3">
+            <img class="fragment" src="./images/presentation/corrupted-venv.png" />
+        </td>
+    </tr>
+</table>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14818,7 +14847,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14844,7 +14873,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</aside></div><div class="fragment">
+</aside></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14853,8 +14882,8 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Devcontainers can help us:</p>
 <ul>
-<li>⚡️ Instantly onboard new team members onto your project</li>
 <li>🔄 Get a reproducible development environment</li>
+<li>⚡️ Instantly onboard new team members onto your project</li>
 <li>👨‍👩‍👧‍👦 Better align the environments between team members</li>
 <li>⏱ Keeping your dev environment up-to-date &amp; reproducible saves you team going into production later</li>
 </ul>
@@ -14862,43 +14891,18 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's build a devcontainer!</p>
-
+<h2 id="%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F-Let's-build-a-Devcontainer!">&#128119;&#127995;&#8205;&#9794;&#65039; Let's build a Devcontainer!<a class="anchor-link" href="#%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F-Let's-build-a-Devcontainer!">&#182;</a></h2>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Let's-start-building-%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F">Let's start building &#128119;&#127995;&#8205;&#9794;&#65039;<a class="anchor-link" href="#Let's-start-building-%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>📢 All steps can be found in the various branches of the <a href="https://github.com/godatadriven/python-devcontainer-template">godatadriven/python-devcontainer-template</a> repo</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div></div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14918,25 +14922,26 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="The-.devcontainer-folder">The <code>.devcontainer</code> folder<a class="anchor-link" href="#The-.devcontainer-folder">&#182;</a></h3>
+<h3 id="The-.devcontainer-folder">The <code>.devcontainer</code> folder<a class="anchor-link" href="#The-.devcontainer-folder">&#182;</a></h3><p>Your Devcontainer spec will live inside the <code>.devcontainer</code> folder.</p>
+
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Your Devcontainer spec will live inside the <code>.devcontainer</code> folder. There will be two main files:</p>
+<p>There will be two main files:</p>
 <ul>
 <li><code>devcontainer.json</code></li>
 <li><code>Dockerfile</code></li>
@@ -14945,7 +14950,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14964,7 +14969,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14976,7 +14981,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15022,7 +15027,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</aside></section></section><section><section>
+</aside></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15034,19 +15039,19 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/folder-contains-a-dev-container-config-file.png" alt="folder contains a dev container config file"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/folder-contains-a-dev-container-config-file.png" alt="folder contains a dev container config file" /></p>
 
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15054,12 +15059,12 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Alternatively, you can open up the command pallete (<kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and select “<em>Dev Containers: Reopen in Container</em>”:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/reopen-in-devcontainer-notification.png" alt="Dev Containers: Reopen in Container"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/reopen-in-devcontainer-notification.png" alt="Dev Containers: Reopen in Container" /></p>
 
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15067,12 +15072,12 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Your VSCode is now connected to the Docker container 🙌🏻:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/opening-the-devcontainer.gif" alt="VSCode is now connected to the Docker container"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/opening-the-devcontainer.gif" alt="VSCode is now connected to the Docker container" /></p>
 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15084,7 +15089,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15092,19 +15097,42 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li><p><a href="https://code.visualstudio.com/docs/remote/vscode-server"><strong>VSCode Server</strong></a> is being installed on your Devcontainer. VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. For example, install and run extensions.</p>
-</li>
-<li><p><strong>Config is copied</strong> over. Config like <code>~/.gitconfig</code> and <code>~/.ssh/known_hosts</code> are copied over to their respective locations in the container.
-This then allows you to use your Git repo like you would do normally, without re-authenticating.</p>
-</li>
-<li><p><strong>Filesystem mounts</strong>. VSCode automatically takes care of mounting: 1) The folder you are running the Devcontainer from and 2) your VSCode workspace folder.</p>
+<li><a href="https://code.visualstudio.com/docs/remote/vscode-server"><strong>VSCode Server</strong></a> is being installed on your Devcontainer. VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. For example, install and run extensions.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="2">
+<li><strong>Config is copied</strong> over. Config like <code>~/.gitconfig</code> and <code>~/.ssh/known_hosts</code> are copied over to their respective locations in the container. <!-- This then allows you to use your Git repo like you would do normally, without re-authenticating. -->
 </li>
 </ol>
 
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="3">
+<li><strong>Filesystem mounts</strong>. VSCode automatically takes care of mounting: 1) The folder you are running the Devcontainer from and 2) your VSCode workspace folder.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15112,12 +15140,12 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Opening-your-repo-directly-in-a-Devcontainer">Opening your repo directly in a Devcontainer<a class="anchor-link" href="#Opening-your-repo-directly-in-a-Devcontainer">&#182;</a></h3><p>Actually, since all instructions on how to configure your dev environment is now defined in a Dockerfile, users can open up your Devcontainer with just one button:</p>
-<p><a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template"><img src="https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode" alt="Open in Remote - Containers"></a></p>
+<p><a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template"><img src="https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode" alt="Open in Remote - Containers" /></a></p>
 
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15132,7 +15160,7 @@ This then allows you to use your Git repo like you would do normally, without re
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15141,15 +15169,16 @@ This then allows you to use your Git repo like you would do normally, without re
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>What kind of README would you rather like?</p>
 <table>
-<thead><tr>
-<th style="text-align:center">Manual installation</th>
-<th style="text-align:center">Using a Devcontainer 🙌🏻</th>
+<thead>
+<tr>
+  <th style="text-align:center">Manual installation</th>
+  <th style="text-align:center">Using a Devcontainer 🙌🏻</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><img src="https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-manual.png" alt=""></td>
-<td style="text-align:center"><img src="https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-devcontainer.png" alt=""></td>
+  <td style="text-align:center"><img src="https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-manual.png" alt="" /></td>
+  <td style="text-align:center"><img src="https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-devcontainer.png" alt="" /></td>
 </tr>
 </tbody>
 </table>
@@ -15157,7 +15186,7 @@ This then allows you to use your Git repo like you would do normally, without re
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15169,7 +15198,7 @@ This then allows you to use your Git repo like you would do normally, without re
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15177,13 +15206,13 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Install a non-root user for extra safety and good-practice</li>
+<li>Install a <strong>non-root user</strong> for extra safety and good-practice</li>
 </ul>
 
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15191,13 +15220,13 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Pass in custom VSCode settings and install extensions by default</li>
+<li>Pass in <strong>custom VSCode settings</strong> and install extensions by default</li>
 </ul>
 
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15205,13 +15234,13 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Be able to access Spark UI (port 4040)</li>
+<li>Be able to access Spark UI (<strong>opening up port 4040</strong>)</li>
 </ul>
 
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15219,13 +15248,13 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Run CI in the Devcontainer</li>
+<li>Run <strong>Continuous Integration</strong> (CI) in the Devcontainer</li>
 </ul>
 
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15237,7 +15266,7 @@ This then allows you to use your Git repo like you would do normally, without re
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15245,14 +15274,13 @@ This then allows you to use your Git repo like you would do normally, without re
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Installing-a-non-root-user">Installing a non-root user<a class="anchor-link" href="#Installing-a-non-root-user">&#182;</a></h3><!-- > Step 2 -->
-
 <p>If you <code>pip install</code> a new package, you will see the following message:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/running-pip-as-root.png" alt="The warning message: “*WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: [https://pip.pypa.io/warnings/venv](https://pip.pypa.io/warnings/venv)*"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/running-pip-as-root.png" alt="The warning message: “*WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: [https://pip.pypa.io/warnings/venv](https://pip.pypa.io/warnings/venv)*" /></p>
 
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15272,7 +15300,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15286,7 +15314,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15298,7 +15326,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15309,7 +15337,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15352,7 +15380,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</aside></div></section></section><section><section>
+</aside></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15360,13 +15388,12 @@ USER <span class="nv">$USERNAME</span>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Accessing-Spark-UI">Accessing Spark UI<a class="anchor-link" href="#Accessing-Spark-UI">&#182;</a></h3><!-- > Step 4 -->
-
 <p>Since we are using pyspark, it would be nice to be able to access <strong>Spark UI</strong>.</p>
 
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15388,7 +15415,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15396,12 +15423,12 @@ USER <span class="nv">$USERNAME</span>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>When we now run our code, we get a notification we can open Spark UI in the browser:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/application-running-on-port-4040.png" alt="open Spark UI in the browser"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/application-running-on-port-4040.png" alt="open Spark UI in the browser" /></p>
 
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15409,20 +15436,20 @@ USER <span class="nv">$USERNAME</span>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Resulting in the Spark UI like we know it:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/spark-ui-visible-in-localhost-4040.png" alt="spark UI in the browser"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/spark-ui-visible-in-localhost-4040.png" alt="spark UI in the browser" /></p>
 <p>✨</p>
 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Running-our-CI-in-the-Devcontainer">Running our CI in the Devcontainer<a class="anchor-link" href="#Running-our-CI-in-the-Devcontainer">&#182;</a></h2>
+<h3 id="Running-our-CI-in-the-Devcontainer">Running our CI in the Devcontainer<a class="anchor-link" href="#Running-our-CI-in-the-Devcontainer">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15434,13 +15461,13 @@ USER <span class="nv">$USERNAME</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Wouldn't it be convenient if we could re-use our Devcontainer to run our Continuous Integration (CI) pipeline as well? Indeed, we can do this with Devcontainers. Similarly to how the Devcontainer image is built locally using <code>docker build</code>, the same can be done <em>within</em> a CI/CD pipeline. There are two basic options:</p>
+<p>Wouldn't it be convenient if we could re-use our Devcontainer to run our Continuous Integration (CI) pipeline as well? Indeed, we can do this with Devcontainers. Similarly to how the Devcontainer image is built locally using <code>docker build</code>, the same can be done <em>within</em> a CI/CD pipeline.</p>
 
 </div>
 </div>
 </div>
 </div>
-</aside><div class="fragment">
+</aside><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15452,36 +15479,25 @@ USER <span class="nv">$USERNAME</span>
 <li>Build the Docker image <em>within</em> the CI/CD pipeline</li>
 <li>Prebuilding the image</li>
 </ol>
-<p>Let's see about option number (1).</p>
+<p><span style="color:#aaa">Let's see about option number (1).</span></p>
 
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Using-devcontainers/ci">Using <code>devcontainers/ci</code><a class="anchor-link" href="#Using-devcontainers/ci">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Luckily, a GitHub Action was already setup for us to do exactly this:</p>
-<p><a href="https://github.com/devcontainers/ci">https://github.com/devcontainers/ci</a></p>
+<h4 id="1.-Build-the-Docker-image-within-the-CI/CD-pipeline">1. Build the Docker image <em>within</em> the CI/CD pipeline<a class="anchor-link" href="#1.-Build-the-Docker-image-within-the-CI/CD-pipeline">&#182;</a></h4><p>Luckily, a GitHub Action was already setup for us to do exactly this:</p>
+<p><a href="https://github.com/devcontainers/ci">devcontainers/ci</a></p>
 
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15492,10 +15508,7 @@ USER <span class="nv">$USERNAME</span>
 <div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python app</span><span class="w"></span>
 
 <span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;**&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
 
 <span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"></span>
@@ -15536,7 +15549,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15544,12 +15557,12 @@ USER <span class="nv">$USERNAME</span>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>See below a trace of the executed GitHub Action:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/running-ci-in-the-devcontainer-github-actions.png" alt="running-ci-in-the-devcontainer-github-actions"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/running-ci-in-the-devcontainer-github-actions.png" alt="running-ci-in-the-devcontainer-github-actions" /></p>
 
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15561,7 +15574,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15573,7 +15586,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15606,24 +15619,36 @@ USER <span class="nv">$USERNAME</span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
-
-<span class="w">    </span><span class="nt">&quot;portsAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;4040&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SparkUI&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;onAutoForward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;notify&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-
-<span class="w">    </span><span class="nt">&quot;forwardPorts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="mi">4040</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="nt">&quot;portsAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;4040&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SparkUI&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;onAutoForward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;notify&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
+
+<span class="nt">&quot;forwardPorts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="mi">4040</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15662,7 +15687,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15674,19 +15699,19 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/three-environments-docker-images-devcontainer-setup.png" alt="three-environments-docker-images-devcontainer"></p>
+<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/three-environments-docker-images-devcontainer-setup.png" alt="three-environments-docker-images-devcontainer" /></p>
 
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15697,7 +15722,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15711,7 +15736,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15725,7 +15750,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15742,7 +15767,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15761,7 +15786,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15770,8 +15795,8 @@ USER <span class="nv">$USERNAME</span>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Concluding">Concluding<a class="anchor-link" href="#Concluding">&#182;</a></h2><p>Devcontainers have proven useful to:</p>
 <ul>
-<li>⚡️ Instantly onboard new team members onto your project</li>
 <li>🔄 Get a reproducible development environment</li>
+<li>⚡️ Instantly onboard new team members onto your project</li>
 <li>👨‍👩‍👧‍👦 Better align the environments between team members</li>
 <li>⏱ Keeping your dev environment up-to-date &amp; reproducible saves you team going into production later</li>
 </ul>
@@ -15779,7 +15804,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15791,14 +15816,16 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Thanks! 🙌🏻</p>
+<h2 id="Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">Thanks! &#128588;&#127995;<a class="anchor-link" href="#Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">&#182;</a></h2><p><img src="./images/presentation/cat.webp" alt="moving cat gif" /></p>
+<p>Repo:
+<a href="https://github.com/godatadriven/python-devcontainer-template">godatadriven/python-devcontainer-template</a></p>
 
 </div>
 </div>
@@ -15817,7 +15844,7 @@ USER <span class="nv">$USERNAME</span>
 </div>
 </div>
 </div>
-</aside></div></section></section>
+</aside></section></section>
 </div>
 </div>
 </body>
@@ -15836,8 +15863,8 @@ require(
       waitSeconds: 15
     },
     [
-      "https://unpkg.com/reveal.js@4.0.2/dist/reveal.js",
-      "https://unpkg.com/reveal.js@4.0.2/plugin/notes/notes.js"
+      "https://unpkg.com/reveal.js@4.4.0/dist/reveal.js",
+      "https://unpkg.com/reveal.js@4.4.0/plugin/notes/notes.js"
     ],
 
     function(Reveal, RevealNotes){
