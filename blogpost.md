@@ -17,7 +17,7 @@ Devcontainers can help us:
 - 🔄 Get a reproducible development environment
 - ⚡️ Instantly onboard new team members onto your project
 - 👨‍👩‍👧‍👦 Better align the environments between team members
-- ⏱ Keeping your dev environment up-to-date & reproducible saves you team going into production later
+- ⏱ Keeping your dev environment up-to-date & reproducible saves your team time going into production later
 
 
 Let’s explore how we can set up a Devcontainer for your Python project!
