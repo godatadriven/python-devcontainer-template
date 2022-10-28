@@ -27,13 +27,13 @@ Then, there's 2 options:
 
 1. Click _Use this template_ to create a new repo.
 
-    <a href="https://github.com/godatadriven/python-devcontainer-template/generate"><img alt="use this template GitHub button" src="https://camo.githubusercontent.com/523d7e81c3d3dcd01b711f14c87e850edeb8e62bf72814d3231ab084a0c70d31/68747470733a2f2f7777772e726f737472756d2e626c6f672f706f73742f323031392d30362d31312d612d7265706f2d74656d706c6174652d666f722d722d616e616c797369735f66696c65732f7573652d746869732e706e67" width="140px" /></a>
+    <a href="https://github.com/godatadriven/python-devcontainer-template/generate"><img alt="use this template GitHub button" src="https://camo.githubusercontent.com/523d7e81c3d3dcd01b711f14c87e850edeb8e62bf72814d3231ab084a0c70d31/68747470733a2f2f7777772e726f737472756d2e626c6f672f706f73742f323031392d30362d31312d612d7265706f2d74656d706c6174652d666f722d722d616e616c797369735f66696c65732f7573652d746869732e706e67" width="150px" /></a>
 
 1. **Clone** the repo and open it in **VSCode**.
 
 1. You should see the following notification:
 
-    ![folder contains a dev container config file](https://raw.githubusercontent.com/godatadriven/python-devcontainer-template/blogpost/images/folder-contains-a-dev-container-config-file.png)
+    <img src="https://raw.githubusercontent.com/godatadriven/python-devcontainer-template/blogpost/images/folder-contains-a-dev-container-config-file.png" alt="folder contains a dev container config file" width="500px"/>
 
     Press _Reopen in Container_ and you the Devcontainer will be loaded.
 
