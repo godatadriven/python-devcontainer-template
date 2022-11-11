@@ -24,8 +24,6 @@ Let’s explore how we can set up a Devcontainer for your Python project!
 
 ## Creating your first Devcontainer
 
-> 📢 All steps can be found in the various branches of the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo
-
 <!-- > Step 1 -->
 
 > This tutorial is focused on **VSCode**. Other IDE’s like PyCharm support running in Docker containers but support is less comprehensive than on VSCode.
@@ -125,12 +123,24 @@ This then allows you to use your Git repo like you would do normally, without re
 ### Opening your repo directly in a Devcontainer
 Actually, since all instructions on how to configure your dev environment is now defined in a Dockerfile, users can open up your Devcontainer with just one button:
 
-[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
+[
+    ![Open in Remote - Containers](
+        https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode
+    )
+](
+    https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template
+)
 
 Aint that cool? You can add a button to your own repo like so:
 
 ```
-[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
+[
+    ![Open in Remote - Containers](
+        https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode
+    )
+](
+    https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template
+)
 ```
 
 Just modify the GitHub URL ✓.
@@ -145,10 +155,10 @@ Manual installation             |  Using a Devcontainer 🙌🏻
 
 We have built a working Devcontainer, that is great! But a couple things are still missing. We would like to:
 
-- Install a non-root user for extra safety and good-practi
+- Install a non-root user for extra safety and good-practice
 - Pass in custom VSCode settings and install extensions by default
 - Be able to access Spark UI (port 4040)
-- Run CI in the Devcontainer
+- Run Continuous Integration (CI) in the Devcontainer
 
 Let's see how.
 
@@ -417,6 +427,8 @@ COPY --chown=nonroot:1000 requirements-dev.txt /tmp/requirements-dev.txt
 RUN pip install -r /tmp/requirements-dev.txt && \
     rm /tmp/requirements-dev.txt
 ```
+
+> 📢 The full Devcontainer implementation and all above steps can be found in the various branches of the [godatadriven/python-devcontainer-template](https://github.com/godatadriven/python-devcontainer-template) repo.
 
 ## Devcontainer architecture: Three environments 🎁
 
