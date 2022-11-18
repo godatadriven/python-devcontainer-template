@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "build": "jupyter nbconvert presentation.ipynb --to slides --SlidesExporter.reveal_scroll=True --TagRemovePreprocessor.remove_input_tags remove-input --SlidesExporter.reveal_url_prefix=https://unpkg.com/reveal.js@4.4.0",
+        "predeploy": "mkdir -p build && cp presentation.slides.html build/index.html && mkdir -p build/images/presentation && cp -r images/presentation build/images",
+        "deploy": "npx gh-pages -d build",
+        "serve": "chokidar \"presentation.ipynb\" -c \"npm run build\""
+    }
+}
