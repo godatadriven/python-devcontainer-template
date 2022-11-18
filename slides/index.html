@@ -1,0 +1,634 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="header"
+				data-background="images/presentation/without-ship-taller-img.png"\
+				data-background-opacity="0.5"
+
+				>
+				<span width="20px" style="width: 20px;">
+					How to create a Devcontainer for your Python project &#128051;
+
+				</span>
+
+				How to create a Devcontainer for your Python project &#128051;
+			</section>
+			<!-- <section>Slide 2
+						<aside class="notes">
+						<p>Some notes</p>
+						</aside>
+						<p>Some slide text</p>
+						<aside class="notes">
+						<p>and some more notes</p>
+					</aside>
+				</section>
+				 -->
+
+
+
+
+			<!-- <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">
+					<h1 id="How-to-create-a-Devcontainer-for-your-Python-project-%F0%9F%90%B3">How to create a Devcontainer for your Python project 🐳</h1>
+					</section> -->
+
+
+			<section data-background-transition="none">
+				<img src="images/presentation/jeroen-overschie-intro.png" alt="Jeroen Overschie" width="600px">
+			</section>
+
+
+			<section>
+				<section>
+					<h2 id="The-use-case">The use case<a class="anchor-link" href="#The-use-case">¶</a></h2>
+				</section>
+
+				<section>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<img src="images/presentation/logo-spark.png" alt="Apache Spark" width="200px"
+										class="fragment" data-fragment-index="0">
+								</td>
+								<td>
+									<img src="images/presentation/logo-pyspark.png" alt="Apache Spark - pyspark"
+										width="200px" class="fragment" data-fragment-index="1">
+								</td>
+								<td>
+									<img src="images/presentation/logo-python.png" alt="Python" width="200px"
+										class="fragment" data-fragment-index="2">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+
+				<section>
+					<ul>
+						<li>Apache Spark to <strong>process data</strong> (we have a cluster setup. Plus needs
+							<strong>Java</strong>.)</li>
+						<li>pyspark (pip package)</li>
+						<li>Python (Python version)</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<p>So we need to align on:</p>
+				</section>
+
+
+				<section>
+					<ul>
+						<li>📌 A specific Java version</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<ul>
+						<li>📌 A specific Python version</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<ul>
+						<li>📌 A specific <code>pyspark</code> version</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<p>→ otherwise we do not enjoy the guarantees we want in <strong>production</strong> code</p>
+				</section>
+
+
+				<section>
+					<table style="background-color: #F5F5F5">
+						<tbody>
+							<tr style="background: none">
+								<td style="border: none">
+									<img src="./images/presentation/teams-logo-32.png">
+								</td>
+							</tr>
+							<tr style="background: none">
+								<td style="border: none">
+									<img class="fragment" src="./images/presentation/messed-up-pyenv.png"
+										data-fragment-index="0">
+								</td>
+								<td style="border: none">
+								</td>
+								<td style="border: none">
+									<img class="fragment"
+										src="images/presentation/project-deps-dont-work-on-modern-os.png"
+										data-fragment-index="1">
+								</td>
+							</tr>
+							<tr style="background: none">
+								<td style="border: none">
+									<img class="fragment"
+										src="./images/presentation/difficulties-dockerizing-and-going-into-production.png"
+										data-fragment-index="2">
+								</td>
+								<td style="border: none" colspan="2">
+									<img class="fragment" src="./images/presentation/misaligned-environments.png"
+										data-fragment-index="3">
+								</td>
+							</tr>
+							<tr style="background: none">
+								<td style="border: none" colspan="3">
+									<img class="fragment" src="./images/presentation/corrupted-venv.png"
+										data-fragment-index="4">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</section>
+
+			<section>
+				<ol>
+					<li><em>Python Dev colleague</em>. Hi! Sorry I couldn't join the meeting just now. I messed up my
+						mpyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon.</li>
+					<li><em>John the Python Dev</em>. Hey so I was working on maintaining the old project. Just found
+						out that some of the dependencies don't even work on my MacOS version anymore. FML</li>
+					<li><em>Corporate colleague using a Windows laptop</em>. Hey I'm trying to dockerize the project but
+						it's haaard. Everything that works on my Windows laptop seems to fail on Linux. We should have
+						done this earlier. Anyway: I think we should ask the PO for an extension for running the entire
+						thing in production.</li>
+					<li><em>Me</em>: Hii. Can you maybe run <code>pip show pyspark</code>? I'm curious which pyspark
+						version you are running 🧐. Because if it works for you but not for me &amp; also not in the CI
+						maybe your environment is different. Just checking.</li>
+					<li><em>A fellow Data Scientist</em>. There weren't any docs on how to set up the correct venv
+						right? Mine somehow got corrupted 🙃. It's saying "No module named 'numpy'" even though I
+						seemingly have it installed. Not sure how to fix.</li>
+				</ol>
+			</section>
+
+
+			<section>
+				<h2 id="Devcontainers-to-the-rescue-%E2%9B%91!">Devcontainers to the rescue ⛑!<a class="anchor-link"
+						href="#Devcontainers-to-the-rescue-%E2%9B%91!">¶</a></h2>
+			</section>
+
+
+			<section>
+				<p><strong>Docker</strong> helps us create a formal definition of our environment.
+					<strong>Devcontainers</strong> allow you to connect your editor (IDE) to that container.</p>
+			</section>
+
+
+			<section>
+				<ul>
+					<li><strong>Docker</strong></li>
+					<li><strong>Devcontainer</strong>: connect to your IDE</li>
+					<li><strong>Formal</strong> instruction set for dev env setup</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<p><span style="color: #aaa;">📝 Note that this does mean running Docker images on your laptop
+						(performance requirement).</span></p>
+			</section>
+
+
+			<section>
+				<p><span style="color: #4d4d4d;">Devcontainers can help us:</span></p>
+			</section>
+
+
+			<section>
+				<h2 id="%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F-Let's-build-a-Devcontainer!">👷🏻‍♂️ Let's
+					build a Devcontainer!<a class="anchor-link"
+						href="#%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F-Let's-build-a-Devcontainer!">¶</a>
+				</h2>
+			</section>
+
+
+			<section>
+				<p>Let’s say we have a really simple project that looks like this:</p>
+			</section>
+
+
+			<section>
+				<h3 id="The-.devcontainer-folder">The <code>.devcontainer</code> folder<a class="anchor-link"
+						href="#The-.devcontainer-folder">¶</a></h3>
+			</section>
+
+
+			<section>
+				<p>There will be two main files:</p>
+			</section>
+
+
+			<section>
+				<p>Create a new file called <code>devcontainer.json</code>:</p>
+			</section>
+
+
+			<section>
+				<p>This does basically means: as a base for our Devcontainer, use the <code>Dockerfile</code> located in
+					the current directory, and build it with a <em>current working directory</em> (cwd) of
+					<code>..</code>.</p>
+			</section>
+
+
+			<section>
+				<p>So how does this <code>Dockerfile</code> look like?</p>
+			</section>
+
+
+			<section>
+				<p>We are building our image on top of <code>python:3.10</code>, which is a Debian-based image. This is
+					one of the Linux distributions that a Devcontainer can be built on. The main requirement is that
+					<strong>Node.js</strong> should be able to run: VSCode automatically installs VSCode Server on the
+					machine.</p>
+			</section>
+
+
+			<section>
+				<h3 id="Opening-the-Devcontainer">Opening the Devcontainer<a class="anchor-link"
+						href="#Opening-the-Devcontainer">¶</a></h3>
+			</section>
+
+
+			<section>
+				<p>Open up the command pallete (<kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and select “<em>Dev
+						Containers: Reopen in Container</em>”:</p>
+			</section>
+
+
+			<section>
+				<p>Upon opening a repo with a valid <code>.devcontainer</code> folder, you are already notified:</p>
+			</section>
+
+
+			<section>
+				<p>Your VSCode is now connected to the Docker container 🙌🏻:</p>
+			</section>
+
+
+			<section>
+				<h3 id="What-is-happening-under-the-hood-%F0%9F%9A%97">What is happening under the hood 🚗<a
+						class="anchor-link" href="#What-is-happening-under-the-hood-%F0%9F%9A%97">¶</a></h3>
+			</section>
+
+
+			<section>
+				<h3 id="Opening-your-Devcontainer-with-the-click-of-a-button">Opening your Devcontainer with the click
+					of a button<a class="anchor-link" href="#Opening-your-Devcontainer-with-the-click-of-a-button">¶</a>
+				</h3>
+			</section>
+
+
+			<section>
+				<pre><code data-line-numbers="1">
+					[
+						![Open in Remote - Containers](
+							https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode
+						)
+					](
+						https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template
+					)
+					</code></pre>
+			</section>
+
+
+			<section>
+				<p>This renders the following button:</p>
+			</section>
+
+
+			<section>
+				<p>What kind of README would you rather like?</p>
+			</section>
+
+
+			<section>
+				<h2 id="Extending-the-Devcontainer">Extending the Devcontainer<a class="anchor-link"
+						href="#Extending-the-Devcontainer">¶</a></h2>
+			</section>
+
+
+			<section>
+				<ul>
+					<li>Install a <strong>non-root user</strong> for extra safety and good-practice</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<ul>
+					<li>Pass in <strong>custom VSCode settings</strong> and install extensions by default</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<ul>
+					<li>Be able to access Spark UI (<strong>opening up port 4040</strong>)</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<ul>
+					<li>Run <strong>Continuous Integration</strong> (CI) in the Devcontainer</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<p>Let's see how.</p>
+			</section>
+
+
+			<section>
+				<h3 id="Installing-a-non-root-user">Installing a non-root user<a class="anchor-link"
+						href="#Installing-a-non-root-user">¶</a></h3>
+			</section>
+
+
+			<section>
+				<p>So let's go ahead and create a user for this scenario.</p>
+			</section>
+
+
+			<section>
+				<p>Add the following property to <code>devcontainer.json</code>:</p>
+			</section>
+
+
+			<section>
+				<p>That's great! When we now start the container we should connect as the user <code>nonroot</code>.</p>
+			</section>
+
+
+			<section>
+				<h3 id="Passing-custom-VSCode-settings">Passing custom VSCode settings<a class="anchor-link"
+						href="#Passing-custom-VSCode-settings">¶</a></h3>
+			</section>
+
+
+			<section>
+				<div class="highlight">
+					<pre><span></span><span class="nt">"customizations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+					<span class="w">        </span><span class="nt">"vscode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+					<span class="w">            </span><span class="nt">"extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+					<span class="w">                </span><span class="s2">"ms-python.python"</span><span class="w"></span>
+					<span class="w">            </span><span class="p">],</span><span class="w"></span>
+					<span class="w">            </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+					<span class="w">                </span><span class="nt">"python.testing.pytestArgs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+					<span class="w">                    </span><span class="s2">"."</span><span class="w"></span>
+					<span class="w">                </span><span class="p">],</span><span class="w"></span>
+					<span class="w">                </span><span class="nt">"python.testing.unittestEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+					<span class="w">                </span><span class="nt">"python.testing.pytestEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+					<span class="w">                </span><span class="nt">"python.formatting.provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black"</span><span class="p">,</span><span class="w"></span>
+					<span class="w">                </span><span class="nt">"python.linting.mypyEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+					<span class="w">                </span><span class="nt">"python.linting.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+					<span class="w">            </span><span class="p">}</span><span class="w"></span>
+					<span class="w">        </span><span class="p">}</span><span class="w"></span>
+					<span class="w">    </span><span class="p">}</span><span class="w"></span>
+					</pre>
+				</div>
+			</section>
+
+
+			<section>
+				<p>The defined extensions are always installed in the Devcontainer. However, the defined settings
+					provide just a <strong>default</strong> for the user to use, and can still be overriden by other
+					setting scopes like: User Settings, Remote Settings or Workspace Settings.</p>
+			</section>
+
+
+			<section>
+				<h3 id="Accessing-Spark-UI">Accessing Spark UI<a class="anchor-link" href="#Accessing-Spark-UI">¶</a>
+				</h3>
+			</section>
+
+
+			<section>
+				<div class="highlight">
+					<pre><span></span><span class="nt">"portsAttributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+					<span class="w">        </span><span class="nt">"4040"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+					<span class="w">            </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SparkUI"</span><span class="p">,</span><span class="w"></span>
+					<span class="w">            </span><span class="nt">"onAutoForward"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notify"</span><span class="w"></span>
+					<span class="w">        </span><span class="p">}</span><span class="w"></span>
+					<span class="w">    </span><span class="p">},</span><span class="w"></span>
+					
+					<span class="w">    </span><span class="nt">"forwardPorts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+					<span class="w">        </span><span class="mi">4040</span><span class="w"></span>
+					<span class="w">    </span><span class="p">]</span><span class="w"></span>
+					</pre>
+				</div>
+			</section>
+
+
+			<section>
+				<p>When we now run our code, we get a notification we can open Spark UI in the browser:</p>
+			</section>
+
+
+			<section>
+				<p>Resulting in the Spark UI like we know it:</p>
+			</section>
+
+
+			<section>
+				<h3 id="Running-our-CI-in-the-Devcontainer">Running our CI in the Devcontainer<a class="anchor-link"
+						href="#Running-our-CI-in-the-Devcontainer">¶</a></h3>
+			</section>
+
+
+			<section>
+				<p>Wouldn't it be convenient if we could re-use our Devcontainer to run our Continuous Integration (CI)
+					pipeline as well? Indeed, we can do this with Devcontainers. Similarly to how the Devcontainer image
+					is built locally using <code>docker build</code>, the same can be done <em>within</em> a CI/CD
+					pipeline.</p>
+			</section>
+
+
+			<section>
+				<p>There are two basic options:</p>
+			</section>
+
+
+			<section>
+				<h4 id="1.-Build-the-Docker-image-within-the-CI/CD-pipeline">1. Build the Docker image <em>within</em>
+					the CI/CD pipeline<a class="anchor-link"
+						href="#1.-Build-the-Docker-image-within-the-CI/CD-pipeline">¶</a></h4>
+			</section>
+
+
+			<section>
+				<p>To now build, push and run a command in the Devcontainer is as easy as:</p>
+			</section>
+
+
+			<section>
+				<p>That's great! Whenever this workflow runs on your main branch, the image will be pushed to the
+					configured registry; in this case GitHub Container Registry (GHCR).</p>
+			</section>
+
+
+			<section>
+				<p>See below a trace of the executed GitHub Action:</p>
+			</section>
+
+
+			<section>
+				<p>Awesome!</p>
+			</section>
+
+
+			<section>
+				<h2 id="The-final-Devcontainer-definition">The final Devcontainer definition<a class="anchor-link"
+						href="#The-final-Devcontainer-definition">¶</a></h2>
+			</section>
+
+
+			<section>
+				<p>First, <code>devcontainer.json</code>:</p>
+			</section>
+
+
+			<section>
+				<div class="highlight">
+					<pre><span></span><span class="nt">"portsAttributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+					<span class="w">    </span><span class="nt">"4040"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+					<span class="w">        </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SparkUI"</span><span class="p">,</span><span class="w"></span>
+					<span class="w">        </span><span class="nt">"onAutoForward"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notify"</span><span class="w"></span>
+					<span class="w">    </span><span class="p">}</span><span class="w"></span>
+					<span class="p">},</span><span class="w"></span>
+					
+					<span class="nt">"forwardPorts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+					<span class="w">    </span><span class="mi">4040</span><span class="w"></span>
+					<span class="p">]</span><span class="w"></span>
+					</pre>
+				</div>
+			</section>
+
+
+			<section>
+				<p>And our <code>Dockerfile</code>:</p>
+			</section>
+
+
+			<section>
+				<h2 id="Three-environments-%F0%9F%8E%81">Three environments 🎁<a class="anchor-link"
+						href="#Three-environments-%F0%9F%8E%81">¶</a></h2>
+			</section>
+
+
+			<section>
+				<p><img src="./images/presentation/three-environments.png"
+						alt="three-environments-docker-images-devcontainer"></p>
+			</section>
+
+
+			<section>
+				<h2 id="Going-further-%F0%9F%94%AE">Going further 🔮<a class="anchor-link"
+						href="#Going-further-%F0%9F%94%AE">¶</a></h2>
+			</section>
+
+
+			<section>
+				<ul>
+					<li>Devcontainer <a href="https://containers.dev/features">features</a></li>
+				</ul>
+			</section>
+
+
+			<section>
+				<ul>
+					<li>Devcontainer <a href="https://containers.dev/templates">templates</a></li>
+				</ul>
+			</section>
+
+
+			<section>
+				<ul>
+					<li>
+						<p><a href="https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount">Mounting
+								directories </a></p>
+						<p>💡 Pro tip: mount your AWS/GCP/Azure credentials</p>
+					</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<h3 id="Awesome-resources">Awesome resources<a class="anchor-link" href="#Awesome-resources">¶</a></h3>
+			</section>
+
+
+			<section>
+				<h2 id="Concluding">Concluding<a class="anchor-link" href="#Concluding">¶</a></h2>
+			</section>
+
+
+			<section>
+				<p>Now only VSCode, but <a href="https://containers.dev/">open specification</a> taking shape.</p>
+			</section>
+
+
+			<section>
+				<h2 id="Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">Thanks! 🙌🏻<a class="anchor-link"
+						href="#Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">¶</a></h2>
+			</section>
+
+
+			<section>
+				<h2 id="About">About<a class="anchor-link" href="#About">¶</a></h2>
+			</section>
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
