@@ -1,13 +1,19 @@
 # How to create a Devcontainer for your Python project 🐳
 
-<!-- Complicated environment. Pinning down versions. Everyone's hardware is different. -->
-Take the following scenario. Your company uses Apache Spark to process data, and your team has pyspark set up in a Python project. The codebase is built on a specific Python version, using a certain Java installation, and an accompanying pyspark version that works with the former. To onboard a new member, you will need to pass a list of instructions the developer needs to follow carefully to get their setup working. But not everyone might run this on the same laptop environment: different hardware, and different operating systems. This is getting challenging.
+Take the following scenario.
 
-<!-- Project environment changes over time. -->
-But the setup is a one-off, right? Just go through the setup once and you’ll be good. Not entirely. Your code environment will change over time: your team will probably install-, update- or remove packages during the project’s development. This means that if a developer creates a new feature and changes their own environment to do so; he or she also needs to make sure that the other team members change theirs and that the production environment is updated accordingly. This makes it easy to get misaligned environments: between developers, and between development & production.
+<!-- Complicated environment. Pinning down versions. Everyone's hardware is different. -->
+> Your company uses Apache Spark to process data, and your team has pyspark set up in a Python project. The codebase is built on a specific Python version, using a certain Java installation, and an accompanying pyspark version that works with the former. To onboard a new member, you will need to pass a list of instructions the developer needs to follow carefully to get their setup working. But not everyone might run this on the same laptop environment: different hardware, and different operating systems. This is getting challenging.
+> <!-- Project environment changes over time. -->
+> But the setup is a one-off, right? Just go through the setup once and you’ll be good. Not entirely. Your code environment will change over time: your team will probably install-, update- or remove packages during the project’s development. This means that if a developer creates a new feature and changes their own environment to do so; he or she also needs to make sure that the other team members change theirs and that the production environment is updated accordingly. This makes it easy to get misaligned environments: between developers, and between development & production.
+
 
 <!-- We can do better. -->
-We can do better than this! Instead of giving other developers a setup document, let’s make sure we also create formal instructions so we can *automatically* set up the development environment. Docker lets us do exactly this – on which Devcontainers are built on top of. 
+We can do better than this! Instead of giving other developers a setup document, let’s make sure we also create formal instructions so we can *automatically* set up the development environment. Devcontainers let us do exactly this.
+
+Devcontainers let you connect your IDE to a running Docker container. In this way, we get the benefits of reproducibility and isolation, whilst getting a native development experience.
+
+![Devcontainer usage overview](https://godatadriven.com/wp-content/uploads/2022/10/devcontainer-overview-3.png)
 
 <!-- Devcontainers! -->
 Devcontainers can help us:
@@ -24,7 +30,7 @@ Let’s explore how we can set up a Devcontainer for your Python project!
 
 <!-- > Step 1 -->
 
-> This tutorial is focused on **VSCode**. Other IDE’s like PyCharm support running in Docker containers but support is less comprehensive than on VSCode.
+Note that this tutorial is focused on **VSCode**. Other IDE’s like PyCharm support running in Docker containers but support is less comprehensive than on VSCode.
 
 ### 📌 Recap
 
