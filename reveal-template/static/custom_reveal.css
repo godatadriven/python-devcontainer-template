@@ -115,3 +115,7 @@ div.jp-OutputPrompt {
 ::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
+
+.jp-MarkdownOutput.jp-RenderedHTMLCommon {
+  overflow: hidden;
+}
