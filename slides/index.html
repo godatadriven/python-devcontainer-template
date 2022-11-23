@@ -17,6 +17,27 @@
 	<style>
 
 	</style>
+	<style>
+		.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+			text-transform: none;
+		}
+
+		.reveal .slides > section > section { text-align:left; }
+
+		kbd {
+			background-color: var(--jp-rendermime-table-row-background);
+			border: 1px solid var(--jp-border-color0);
+			border-bottom-color: var(--jp-border-color2);
+			border-radius: 3px;
+			box-shadow: inset 0 -1px 0 rgb(0 0 0 / 25%);
+			display: inline-block;
+			font-size: 0.8em;
+			line-height: 1em;
+			padding: 0.2em 0.5em;
+
+			
+		}
+	</style>
 </head>
 
 <body>
@@ -24,15 +45,15 @@
 		<div class="slides">
 			<section id="header"
 				data-background="images/presentation/without-ship-taller-img.png"\
-				data-background-opacity="0.5"
+				data-background-opacity="0.3"
 
 				>
 				<span width="20px" style="width: 20px;">
-					How to create a Devcontainer for your Python project &#128051;
+					How to create a <br><b>Devcontainer</b> for your <br>Python project &#128051;
 
 				</span>
 
-				How to create a Devcontainer for your Python project &#128051;
+				<!-- How to create a Devcontainer for your Python project &#128051; -->
 			</section>
 			<!-- <section>Slide 2
 						<aside class="notes">
@@ -61,9 +82,7 @@
 			<section>
 				<section>
 					<h2 id="The-use-case">The use case<a class="anchor-link" href="#The-use-case">¶</a></h2>
-				</section>
-
-				<section>
+					
 					<table>
 						<tbody>
 							<tr>
@@ -82,47 +101,33 @@
 							</tr>
 						</tbody>
 					</table>
-				</section>
 
-
-				<section>
-					<ul>
-						<li>Apache Spark to <strong>process data</strong> (we have a cluster setup. Plus needs
-							<strong>Java</strong>.)</li>
-						<li>pyspark (pip package)</li>
-						<li>Python (Python version)</li>
-					</ul>
-				</section>
-
-
-				<section>
+					<aside class="notes">
+						<ul>
+							<li>Apache Spark to <strong>process data</strong> (we have a cluster setup. Plus needs
+								<strong>Java</strong>.)</li>
+							<li>pyspark (pip package)</li>
+							<li>Python (Python version)</li>
+						</ul>
+					</aside>
+					
 					<p>So we need to align on:</p>
-				</section>
-
-
-				<section>
-					<ul>
+					
+					<ul class="fragment">
 						<li>📌 A specific Java version</li>
 					</ul>
-				</section>
-
-
-				<section>
-					<ul>
+					
+					<ul class="fragment">
 						<li>📌 A specific Python version</li>
 					</ul>
-				</section>
-
-
-				<section>
-					<ul>
+					
+					<ul class="fragment">
 						<li>📌 A specific <code>pyspark</code> version</li>
 					</ul>
-				</section>
-
-
-				<section>
-					<p>→ otherwise we do not enjoy the guarantees we want in <strong>production</strong> code</p>
+					
+					<p class="fragment">
+						→ otherwise we do not enjoy the guarantees we want in <strong>production</strong> code
+					</p>
 				</section>
 
 
@@ -167,125 +172,168 @@
 						</tbody>
 					</table>
 				</section>
-			</section>
 
-			<section>
-				<ol>
-					<li><em>Python Dev colleague</em>. Hi! Sorry I couldn't join the meeting just now. I messed up my
-						mpyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon.</li>
-					<li><em>John the Python Dev</em>. Hey so I was working on maintaining the old project. Just found
-						out that some of the dependencies don't even work on my MacOS version anymore. FML</li>
-					<li><em>Corporate colleague using a Windows laptop</em>. Hey I'm trying to dockerize the project but
-						it's haaard. Everything that works on my Windows laptop seems to fail on Linux. We should have
-						done this earlier. Anyway: I think we should ask the PO for an extension for running the entire
-						thing in production.</li>
-					<li><em>Me</em>: Hii. Can you maybe run <code>pip show pyspark</code>? I'm curious which pyspark
-						version you are running 🧐. Because if it works for you but not for me &amp; also not in the CI
-						maybe your environment is different. Just checking.</li>
-					<li><em>A fellow Data Scientist</em>. There weren't any docs on how to set up the correct venv
-						right? Mine somehow got corrupted 🙃. It's saying "No module named 'numpy'" even though I
-						seemingly have it installed. Not sure how to fix.</li>
-				</ol>
-			</section>
-
-
-			<section>
-				<h2 id="Devcontainers-to-the-rescue-%E2%9B%91!">Devcontainers to the rescue ⛑!<a class="anchor-link"
-						href="#Devcontainers-to-the-rescue-%E2%9B%91!">¶</a></h2>
+				<aside class="notes">
+					<ol>
+						<li><em>Python Dev colleague</em>. Hi! Sorry I couldn't join the meeting just now. I messed up my
+							mpyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon.</li>
+						<li><em>John the Python Dev</em>. Hey so I was working on maintaining the old project. Just found
+							out that some of the dependencies don't even work on my MacOS version anymore. FML</li>
+						<li><em>Corporate colleague using a Windows laptop</em>. Hey I'm trying to dockerize the project but
+							it's haaard. Everything that works on my Windows laptop seems to fail on Linux. We should have
+							done this earlier. Anyway: I think we should ask the PO for an extension for running the entire
+							thing in production.</li>
+						<li><em>Me</em>: Hii. Can you maybe run <code>pip show pyspark</code>? I'm curious which pyspark
+							version you are running 🧐. Because if it works for you but not for me &amp; also not in the CI
+							maybe your environment is different. Just checking.</li>
+						<li><em>A fellow Data Scientist</em>. There weren't any docs on how to set up the correct venv
+							right? Mine somehow got corrupted 🙃. It's saying "No module named 'numpy'" even though I
+							seemingly have it installed. Not sure how to fix.</li>
+					</ol>
+				</aside>
 			</section>
 
 
-			<section>
-				<p><strong>Docker</strong> helps us create a formal definition of our environment.
-					<strong>Devcontainers</strong> allow you to connect your editor (IDE) to that container.</p>
-			</section>
 
+			<section style="font-size: 75%;">
+				<h2 id="Devcontainers-to-the-rescue-%E2%9B%91!">Devcontainers to the rescue ⛑!</h2>
 
-			<section>
-				<ul>
-					<li><strong>Docker</strong></li>
-					<li><strong>Devcontainer</strong>: connect to your IDE</li>
-					<li><strong>Formal</strong> instruction set for dev env setup</li>
-				</ul>
-			</section>
+				<p class="fragment" style="color: #676767;">
+					<strong>Docker</strong> helps us create a formal definition of our environment.
+					<strong>Devcontainers</strong> allow you to connect your editor (IDE) to that container.
+				</p>
+				
+				<aside class="notes">
+					<ul>
+						<li><strong>Docker</strong></li>
+						<li><strong>Devcontainer</strong>: connect to your IDE</li>
+						<li><strong>Formal</strong> instruction set for dev env setup</li>
+					</ul>
+				</aside>
+				
+				<table>
+					<tr>
+						<td width="30%">
+							<p class="fragment">
+								<p class="fragment"><span style="color: #4d4d4d;">😐 Disadvantages</span></p>
+								<ul>
+									<li class="fragment">
+										<span style="color: #aaa;">Docker: resource overhead</span>
 
+									</li>
+								</ul>
+							</p>
+						</td>
+						<td colspan="2">
+							<p class="fragment"><span style="color: #4d4d4d;">✅ Advantages</span></p>
+			
+							<ul style="color: #4d4d4d;">
+								<li class="fragment">🔄 <span style="color: black;">Reproducible</span> development environment</li>
+								<li class="fragment">⚡️ <span style="color: black;">Faster project setup</span> → faster onboarding</li>
+								<li class="fragment">👨‍👩‍👧‍👦 <span style="color: black;">Better alignment</span> between team members</li>
+								<li class="fragment">⏱ Forced to keep your dev environment up-to-date &amp; reproducible<ul>
+								<li class="fragment">→ saves your team time going into <strong>production</strong> later</li>
+							</ul>
 
-			<section>
-				<p><span style="color: #aaa;">📝 Note that this does mean running Docker images on your laptop
-						(performance requirement).</span></p>
-			</section>
-
-
-			<section>
-				<p><span style="color: #4d4d4d;">Devcontainers can help us:</span></p>
-			</section>
-
-
-			<section>
-				<h2 id="%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F-Let's-build-a-Devcontainer!">👷🏻‍♂️ Let's
-					build a Devcontainer!<a class="anchor-link"
-						href="#%F0%9F%91%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F-Let's-build-a-Devcontainer!">¶</a>
-				</h2>
-			</section>
-
-
-			<section>
-				<p>Let’s say we have a really simple project that looks like this:</p>
-			</section>
-
-
-			<section>
-				<h3 id="The-.devcontainer-folder">The <code>.devcontainer</code> folder<a class="anchor-link"
-						href="#The-.devcontainer-folder">¶</a></h3>
+						</td>
+					</tr>
+				</table>
+				
 			</section>
 
 
 			<section>
-				<p>There will be two main files:</p>
-			</section>
+				<section>
 
+					<h2>👷🏻‍♂️ Let's
+						build a Devcontainer!
+					</h2>
+				</section>
+				<section>
+					<p>Let’s say we have a really simple project that looks like this:</p>
 
-			<section>
-				<p>Create a new file called <code>devcontainer.json</code>:</p>
-			</section>
+					<pre><code>
+						$ tree .
+						.
+						├── README.md
+						├── requirements.txt
+						├── requirements-dev.txt
+						├── sales_analysis.py
+						└── test_sales_analysis.py
+					</code></pre>
+				</section>
 
+				<section>
+					<h3>The <code>.devcontainer</code> folder</h3>
+					<p>There will be two main files:</p>
+					<ul>
+						<li><code>devcontainer.json</code></li>
+						<li><code>Dockerfile</code></li>
+					</ul>
+				</section>
 
-			<section>
-				<p>This does basically means: as a base for our Devcontainer, use the <code>Dockerfile</code> located in
-					the current directory, and build it with a <em>current working directory</em> (cwd) of
-					<code>..</code>.</p>
-			</section>
+				<section>
+					<p>Create a new file called <code>devcontainer.json</code>:</p>
+					<pre>
+						<code>
+							{
+								"build": {
+									"dockerfile": "Dockerfile",
+									"context": ".."
+								}
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						<p>This does basically means: as a base for our Devcontainer, use the <code>Dockerfile</code> located in
+							the current directory, and build it with a <em>current working directory</em> (cwd) of
+							<code>..</code>.</p>
+					</aside>
+				</section>
 
+				<section>
+					<p>So how does this <code>Dockerfile</code> look like?</p>
+					<pre class="Dockerfile" style="font-size: 0.4em;">
+						<code>FROM python:3.10
 
-			<section>
-				<p>So how does this <code>Dockerfile</code> look like?</p>
-			</section>
+# Install Java
+RUN apt update && \
+	apt install -y sudo && \
+	sudo apt install default-jdk -y
 
+## Pip dependencies
+# Upgrade pip
+RUN pip install --upgrade pip
+# Install production dependencies
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt && \
+	rm /tmp/requirements.txt
+# Install development dependencies
+COPY requirements-dev.txt /tmp/requirements-dev.txt
+RUN pip install -r /tmp/requirements-dev.txt && \
+	rm /tmp/requirements-dev.txt</code>
+					</pre>
+					<aside class="notes">
 
-			<section>
-				<p>We are building our image on top of <code>python:3.10</code>, which is a Debian-based image. This is
-					one of the Linux distributions that a Devcontainer can be built on. The main requirement is that
-					<strong>Node.js</strong> should be able to run: VSCode automatically installs VSCode Server on the
-					machine.</p>
-			</section>
+						<p>We are building our image on top of <code>python:3.10</code>, which is a Debian-based image. This is
+							one of the Linux distributions that a Devcontainer can be built on. The main requirement is that
+							<strong>Node.js</strong> should be able to run: VSCode automatically installs VSCode Server on the
+							machine.</p>
+					</aside>
+				</section>
+				<section>
+					<h3 id="Opening-the-Devcontainer">Opening the Devcontainer</h3>
+					<!-- <p>The <code>.devcontainer</code> folder in place, now it's time to open our Devcontainer.					</p> -->
+					<p>Open up the command pallete (<kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and select “<em>Dev
+							Containers: Reopen in Container</em>”:</p>
 
+							<img src="./images/folder-contains-a-dev-container-config-file.png" alt="folder contains a dev container config file">
+				</section>
+				<section>
 
-			<section>
-				<h3 id="Opening-the-Devcontainer">Opening the Devcontainer<a class="anchor-link"
-						href="#Opening-the-Devcontainer">¶</a></h3>
-			</section>
-
-
-			<section>
-				<p>Open up the command pallete (<kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and select “<em>Dev
-						Containers: Reopen in Container</em>”:</p>
-			</section>
-
-
-			<section>
 				<p>Upon opening a repo with a valid <code>.devcontainer</code> folder, you are already notified:</p>
+				</section>
 			</section>
-
 
 			<section>
 				<p>Your VSCode is now connected to the Docker container 🙌🏻:</p>
