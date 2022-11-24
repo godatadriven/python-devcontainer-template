@@ -119,3 +119,88 @@ div.jp-OutputPrompt {
 .jp-MarkdownOutput.jp-RenderedHTMLCommon {
   overflow: hidden;
 }
+
+/* Teams message */
+
+/* 
+            <div class="teams-message-box">
+                <div class="teams-avatar teams-background-1">
+                    OJ
+                    <img src="./images/teams-status-offline.png" />
+                </div>
+                <div class="teams-name-box">
+                    <span class="teams-name">
+                    <time>
+                        19/10 10:30
+                    </time>
+                </div>
+                <div class="teams-message">
+                    Hi! Sorry I couldn't join the meeting just now. I messed up my mpyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon.
+                </div>
+            </div>
+*/
+
+.teams-message-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: flex;
+  font-size: 80%;
+  margin: 20px;
+  line-height: 20px !important;
+}
+
+.teams-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  left: 12px;
+  top: 10px;
+  line-height: 40px;
+  display: inline-block;
+}
+
+.teams-message {
+  display: inline-block;
+  background-color: white;
+  border-radius: 3px;
+  padding: 20px;
+  flex: 1;
+}
+
+.teams-name {
+  font-weight: bold;
+}
+
+.teams-name-box time {
+  color: #ccc;
+  margin-left: 20px;
+  font-size: 80%;
+  display: none;
+}
+
+.teams-background-1 {
+  background-color: #CFE0D7;
+  color: #3B604B;
+}
+
+.teams-background-2 {
+  background-color: #C8D5E6;
+  color: #395379;
+}
+
+.teams-background-3 {
+  background-color: #EBD4E1;
+  color: #693453;
+}
+
+.teams-background-4 {
+  background-color: #FDEFCC;
+  color: #805E18;
+}
+
+.teams-background-5 {
+  background-color: #F2D6CE;
+  color: #6E2716;
+}
