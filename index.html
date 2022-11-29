@@ -14614,6 +14614,91 @@ div.jp-OutputPrompt {
 
 .jp-MarkdownOutput.jp-RenderedHTMLCommon {
   overflow: hidden;
+}
+
+/* Teams message */
+
+/* 
+            <div class="teams-message-box">
+                <div class="teams-avatar teams-background-1">
+                    OJ
+                    <img src="./images/teams-status-offline.png" />
+                </div>
+                <div class="teams-name-box">
+                    <span class="teams-name">
+                    <time>
+                        19/10 10:30
+                    </time>
+                </div>
+                <div class="teams-message">
+                    Hi! Sorry I couldn't join the meeting just now. I messed up my mpyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon.
+                </div>
+            </div>
+*/
+
+.teams-message-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: flex;
+  font-size: 80%;
+  margin: 20px;
+  line-height: 20px !important;
+}
+
+.teams-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  left: 12px;
+  top: 10px;
+  line-height: 40px;
+  display: inline-block;
+}
+
+.teams-message {
+  display: inline-block;
+  background-color: white;
+  border-radius: 3px;
+  padding: 20px;
+  flex: 1;
+}
+
+.teams-name {
+  font-weight: bold;
+}
+
+.teams-name-box time {
+  color: #ccc;
+  margin-left: 20px;
+  font-size: 80%;
+  display: none;
+}
+
+.teams-background-1 {
+  background-color: #CFE0D7;
+  color: #3B604B;
+}
+
+.teams-background-2 {
+  background-color: #C8D5E6;
+  color: #395379;
+}
+
+.teams-background-3 {
+  background-color: #EBD4E1;
+  color: #693453;
+}
+
+.teams-background-4 {
+  background-color: #FDEFCC;
+  color: #805E18;
+}
+
+.teams-background-5 {
+  background-color: #F2D6CE;
+  color: #6E2716;
 }</style>
 
 <!-- Load mathjax -->
@@ -14664,40 +14749,9 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<!-- <script>
-    function findAncestor (el, name) {
-        while ((el = el.parentElement) && el.nodeName.toLowerCase() !== name);
-        return el;
-    }
-    function colorAll(el, textColor) {
-        el.style.color = textColor;
-        Array.from(el.children).forEach((e) => {colorAll(e, textColor);});
-    }
-    function setBackgroundImage(src, textColor) {
-        var section = findAncestor(document.currentScript, "section");
-        if (section) {
-            section.setAttribute("data-background-image", src);
-    		if (textColor) colorAll(section, textColor);
-        }
-    }
-    function setBackgroundOpacity(src) {
-        var section = findAncestor(document.currentScript, "section");
-        if (section) {
-            section.setAttribute("data-background-opacity", src);
-        }
-    }
-</script>
-
-<script>
-    setBackgroundImage("https://godatadriven.com/wp-content/uploads/2022/09/without-ship-taller-img.png", "white");
-    setBackgroundOpacity("0.3");
-</script> -->
-<h1>How to create a<br><b>Devcontainer</b>   for your<br>Python project 🐳</h1>
-<!-- <img
-    src="https://godatadriven.com/wp-content/uploads/2022/09/without-ship-taller-img.png"
-    alt="Docker ship background wallpaper image"
-    > -->
-<!-- ![Docker ship background wallpaper image](https://godatadriven.com/wp-content/uploads/2022/09/without-ship-taller-img.png) -->
+<h1 style="margin-top: 0px; position: absolute; left: 5vh; top: -5vh;">
+    How to create a<br><b>Devcontainer</b> for your<br>Python project 🐳
+</h1>
 
 </div>
 </div>
@@ -14841,33 +14895,101 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="./images/presentation/teams-logo-64.png" 
+    style="float: left; width: 32px; margin-right: 5px; position: absolute; top: -10px;"
+    /></p>
 <table style="background-color: #F5F5F5">
     <tr style="background: none">
         <td style="border: none">
-            <img src="./images/presentation/teams-logo-32.png" />
+            <div class="teams-message-box fragment">
+                <div class="teams-avatar teams-background-1">
+                    JP
+                </div>
+                <div class="teams-message">
+                    <div class="teams-name-box">
+                        <span class="teams-name">John the Python Dev</span>
+                        <time>
+                            19/10 10:30
+                        </time>
+                    </div>
+                    <!-- Hi! Sorry I couldn't join the meeting just now. I messed up my pyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon. -->
+                    Hi my venv somehow got corrupted 🥲. It's saying <code>No module named 'numpy'.</code> even though I seemingly have it installed. Not sure how to fix.
+                    <br>
+                    P.S. this is also why I was not in the meeting.
+                </div>
+            </div>
+        </td>
+        <td style="border: none">
+        </td>
+        <td style="border: none">
+            <div class="teams-message-box fragment">
+                <div class="teams-avatar teams-background-2">
+                    EO
+                </div>
+                <div class="teams-message">
+                    <div class="teams-name-box">
+                        <span class="teams-name">Erik the old project maintainer</span>
+                        <time>
+                            19/11 11:30
+                        </time>
+                    </div>
+                    Hey so I was working on maintaining the old project. Just found out that some of the dependencies don't even work on my MacOS version anymore. FML
+                </div>
+            </div>
         </td>
     </tr>
     <tr style="background: none">
         <td style="border: none">
-            <img class="fragment" src="./images/presentation/messed-up-pyenv.png" />
-        </td>
-        <td style="border: none">
-        </td>
-        <td style="border: none">
-            <img class="fragment" src="images/presentation/project-deps-dont-work-on-modern-os.png" />
-        </td>
-    </tr>
-    <tr style="background: none">
-        <td style="border: none">
-            <img class="fragment" src="./images/presentation/difficulties-dockerizing-and-going-into-production.png" />
+            <div class="teams-message-box fragment">
+                <div class="teams-avatar teams-background-3">
+                    MW
+                </div>
+                <div class="teams-message">
+                    <div class="teams-name-box">
+                        <span class="teams-name">Mr. Windows</span>
+                        <time>
+                            15/11 15:30
+                        </time>
+                    </div>
+                    Hey I'm trying to dockerize the project but it's haaard. Everything that works on my Windows laptop seems to fail on Linux. 
+                    <!-- We should have done this earlier. Anyway: I think we should ask the PO for an extension for running the entire thing in production. -->
+                </div>
+            </div>
         </td>
         <td style="border: none" colspan="2">
-            <img class="fragment" src="./images/presentation/misaligned-environments.png" />
+            <div class="teams-message-box fragment">
+                <div class="teams-avatar teams-background-4">
+                    PS
+                </div>
+                <div class="teams-message">
+                    <div class="teams-name-box">
+                        <span class="teams-name">PySpark user</span>
+                        <time>
+                            10/10 13:32
+                        </time>
+                    </div>
+                    Hii. Can you maybe run <code>pip show pyspark</code>? I'm curious which pyspark version you are running 🧐. Because if it works for you but not for me and also not in the CI maybe your environment is different than both. Just checking.
+                </div>
+            </div>
         </td>
     </tr>
     <tr style="background: none">
         <td style="border: none" colspan="3">
-            <img class="fragment" src="./images/presentation/corrupted-venv.png" />
+            <div class="teams-message-box fragment">
+                <div class="teams-avatar teams-background-5">
+                    DS
+                </div>
+                <div class="teams-message">
+                    <div class="teams-name-box">
+                        <span class="teams-name">Data Scientist</span>
+                        <time>
+                            19/10 09:03
+                        </time>
+                    </div>
+                    Wanted to get started working on the repo: tried following the README steps but doesn't work. By any chance: are there any more detailed docs available for project setup? No right? 🙃
+                    <!-- There weren't any docs on how to set up the correct venv right? Mine somehow got corrupted 🙃. It's saying <code>No module named 'numpy'</code> even though I seemingly have it installed. Not sure how to fix. -->
+                </div>
+            </div>
         </td>
     </tr>
 </table>
@@ -14895,7 +15017,101 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</aside></section></section><section ><section >
+</aside></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>🐛 Issues</p>
+<table>
+    <tr style="background: none" class="fragment">
+        <td>
+            <div class="teams-avatar teams-background-1" style="top:0;">
+                JP
+            </div>
+        </td>
+        <td style="color: #5b5b5b;">
+            John the Python Dev
+        </td>
+        <td>
+            Corrupted Virtual Environment<br>
+        </td>
+    </tr>
+    <tr style="background: none" class="fragment">
+        <td>
+            <div class="teams-avatar teams-background-2" style="top:0;">
+                EO
+            </div>
+        </td>
+        <td style="color: #5b5b5b;">
+            Erik the old project maintainer
+        </td>
+        <td>
+            Outdated project dependencies<br>
+        </td>
+    </tr>
+    <tr style="background: none" class="fragment">
+        <td>
+            <div class="teams-avatar teams-background-3" style="top:0;">
+                MW
+            </div>
+        </td>
+        <td style="color: #5b5b5b;">
+            Mr. Windows
+        </td>
+        <td>
+            Containerisation & going into production
+            <br><span style="color:#ccc;">e.g. Windows / Linux / MacOS</span>
+        </td>
+    </tr>
+    <tr style="background: none" class="fragment">
+        <td>
+            <div class="teams-avatar teams-background-4" style="top:0;">
+                PS
+            </div>
+        </td>
+        <td style="color: #5b5b5b;">
+            PySpark user
+        </td>
+        <td>
+            Inconsistent environments
+            <br><span style="color:#ccc;">e.g. local ↔ CI ↔ prod ↔ team members</span>
+        </td>
+    </tr>
+    <tr style="background: none" class="fragment">
+        <td>
+            <div class="teams-avatar teams-background-5" style="top:0;">
+                DS
+            </div>
+        </td>
+        <td style="color: #5b5b5b;">
+            Data Scientist
+        </td>
+        <td>
+            No formal specification of install steps / missing docs 📚<br>
+        </td>
+    </tr>
+</table>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3>How to get a ...<br>
+🔄 <b>reproducible</b><br>Dev environment?</h3>
+
+</div>
+</div>
+</div>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15840,26 +16056,7 @@ jobs:
 </div>
 </div>
 </div>
-</div></div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Awesome-resources">Awesome resources<a class="anchor-link" href="#Awesome-resources">&#182;</a></h3><ul>
-<li><a href="https://github.com/devcontainers/ci">devcontainers/ci</a>. Run your CI in your Devcontainers. Built on the <a href="https://github.com/devcontainers/cli">Devcontainer CLI</a>.</li>
-<li><a href="https://containers.dev/">https://containers.dev/</a>. The official Devcontainer specification.</li>
-<li><a href="https://github.com/devcontainers/images">devcontainers/images</a>. A collection of ready-to-use Devcontainer images.</li>
-<li><a href="https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user">Add a non-root user to a container</a>. More explanations &amp; instructions for adding a non-root user to your <code>Dockerfile</code> and <code>devcontainer.json</code>.</li>
-<li><a href="https://code.visualstudio.com/docs/remote/containers#_prebuilding-dev-container-images">Pre-building dev container images</a></li>
-<li><a href="https://github.com/manekinekko/awesome-devcontainers">awesome-devcontainers</a>. A repo pointing to yet even more awesome resources.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15901,17 +16098,36 @@ jobs:
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">Thanks! &#128588;&#127995;<a class="anchor-link" href="#Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">&#182;</a></h2><table>
 <tr>
-<td>
+<td width="40%">
 <img src="./images/presentation/cat.webp" alt="moving cat gif" />
 </td>
-<td>
+<td width="60%" style="text-align: center;">
 <img src="./images/presentation/qrcode_github_repo.png" alt="python-devcontainer-template github QR code link" width="400px" /><br>
 <span style="text-align:center;">
-Repo: <a href="https://github.com/godatadriven/python-devcontainer-template">godatadriven/python-devcontainer-template</a>
+<a href="https://github.com/godatadriven/python-devcontainer-template">github.com/godatadriven/python-devcontainer-template</a>
 </span>
 </td>
 </tr>
 </table>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Awesome-resources">Awesome resources<a class="anchor-link" href="#Awesome-resources">&#182;</a></h3><ul>
+<li><a href="https://github.com/devcontainers/ci">devcontainers/ci</a>. Run your CI in your Devcontainers. Built on the <a href="https://github.com/devcontainers/cli">Devcontainer CLI</a>.</li>
+<li><a href="https://containers.dev/">https://containers.dev/</a>. The official Devcontainer specification.</li>
+<li><a href="https://github.com/devcontainers/images">devcontainers/images</a>. A collection of ready-to-use Devcontainer images.</li>
+<li><a href="https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user">Add a non-root user to a container</a>. More explanations &amp; instructions for adding a non-root user to your <code>Dockerfile</code> and <code>devcontainer.json</code>.</li>
+<li><a href="https://code.visualstudio.com/docs/remote/containers#_prebuilding-dev-container-images">Pre-building dev container images</a></li>
+<li><a href="https://github.com/manekinekko/awesome-devcontainers">awesome-devcontainers</a>. A repo pointing to yet even more awesome resources.</li>
+</ul>
 
 </div>
 </div>
