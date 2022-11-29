@@ -144,7 +144,7 @@ div.jp-OutputPrompt {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: flex;
   font-size: 80%;
-  margin: 20px;
+  margin: 7px;
   line-height: 20px !important;
 }
 
@@ -203,4 +203,8 @@ div.jp-OutputPrompt {
 .teams-background-5 {
   background-color: #F2D6CE;
   color: #6E2716;
+}
+
+.reveal table th, .reveal table td {
+  border-bottom: none;
 }
