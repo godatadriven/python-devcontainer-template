@@ -14640,7 +14640,7 @@ div.jp-OutputPrompt {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: flex;
   font-size: 80%;
-  margin: 20px;
+  margin: 7px;
   line-height: 20px !important;
 }
 
@@ -14655,6 +14655,13 @@ div.jp-OutputPrompt {
   top: 10px;
   line-height: 40px;
   display: inline-block;
+}
+
+.teams-avatar-big {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 40px;
 }
 
 .teams-message {
@@ -14699,6 +14706,10 @@ div.jp-OutputPrompt {
 .teams-background-5 {
   background-color: #F2D6CE;
   color: #6E2716;
+}
+
+.reveal table th, .reveal table td {
+  border-bottom: none;
 }</style>
 
 <!-- Load mathjax -->
@@ -14804,25 +14815,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><aside class="notes">
-
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Apache Spark to <strong>process data</strong> (we have a cluster setup. Plus needs <strong>Java</strong>.)</li>
-<li>pyspark (pip package)</li>
-<li>Python (Python version)</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-</aside><div class="fragment" >
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14888,7 +14881,26 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div></section><section >
+</div><aside class="notes">
+
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Apache Spark to <strong>process data</strong> (we have a cluster setup. Plus needs <strong>Java</strong>.)</li>
+<li>pyspark (pip package)</li>
+<li>Python (Python version)</li>
+</ul>
+<p>→ we want <strong>guarantees</strong> in production code.</p>
+
+</div>
+</div>
+</div>
+</div>
+</aside></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14903,17 +14915,17 @@ div.jp-OutputPrompt {
         <td style="border: none">
             <div class="teams-message-box fragment">
                 <div class="teams-avatar teams-background-1">
-                    JP
+                    PP
                 </div>
                 <div class="teams-message">
                     <div class="teams-name-box">
-                        <span class="teams-name">John the Python Dev</span>
+                        <span class="teams-name">Petra the Python Dev</span>
                         <time>
                             19/10 10:30
                         </time>
                     </div>
                     <!-- Hi! Sorry I couldn't join the meeting just now. I messed up my pyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon. -->
-                    Hi my venv somehow got corrupted 🥲. It's saying <code>No module named 'numpy'.</code> even though I seemingly have it installed. Not sure how to fix.
+                    Hi my venv somehow got corrupted 🥲. It's saying <code>No module named 'numpy'</code> even though I seemingly have it installed. Not sure how to fix.
                     <br>
                     P.S. this is also why I was not in the meeting.
                 </div>
@@ -14942,16 +14954,16 @@ div.jp-OutputPrompt {
         <td style="border: none">
             <div class="teams-message-box fragment">
                 <div class="teams-avatar teams-background-3">
-                    MW
+                    BW
                 </div>
                 <div class="teams-message">
                     <div class="teams-name-box">
-                        <span class="teams-name">Mr. Windows</span>
+                        <span class="teams-name">Billy Windows</span>
                         <time>
                             15/11 15:30
                         </time>
                     </div>
-                    Hey I'm trying to dockerize the project but it's haaard. Everything that works on my Windows laptop seems to fail on Linux. 
+                    I'm trying to dockerize the project but it's haaard. Everything that works on my Windows laptop seems to fail on Linux. 
                     <!-- We should have done this earlier. Anyway: I think we should ask the PO for an extension for running the entire thing in production. -->
                 </div>
             </div>
@@ -14959,11 +14971,11 @@ div.jp-OutputPrompt {
         <td style="border: none" colspan="2">
             <div class="teams-message-box fragment">
                 <div class="teams-avatar teams-background-4">
-                    PS
+                    JJ
                 </div>
                 <div class="teams-message">
                     <div class="teams-name-box">
-                        <span class="teams-name">PySpark user</span>
+                        <span class="teams-name">Johnny Junior</span>
                         <time>
                             10/10 13:32
                         </time>
@@ -14977,16 +14989,16 @@ div.jp-OutputPrompt {
         <td style="border: none" colspan="3">
             <div class="teams-message-box fragment">
                 <div class="teams-avatar teams-background-5">
-                    DS
+                    JJ
                 </div>
                 <div class="teams-message">
                     <div class="teams-name-box">
-                        <span class="teams-name">Data Scientist</span>
+                        <span class="teams-name">Johnny Junior</span>
                         <time>
                             19/10 09:03
                         </time>
                     </div>
-                    Wanted to get started working on the repo: tried following the README steps but doesn't work. By any chance: are there any more detailed docs available for project setup? No right? 🙃
+                    Good day. I'm new at the company and wanted to get started working on the repo. Tried following the README steps but doesn't work. By any chance: are there any more detailed docs available for project setup? No right? 🙃
                     <!-- There weren't any docs on how to set up the correct venv right? Mine somehow got corrupted 🙃. It's saying <code>No module named 'numpy'</code> even though I seemingly have it installed. Not sure how to fix. -->
                 </div>
             </div>
@@ -15006,11 +15018,14 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li><em>Python Dev colleague</em>. Hi! Sorry I couldn't join the meeting just now. I messed up my mpyenv again 🥲. Wanted to fix it fast so I could at least have it working this afternoon.</li>
-<li><em>John the Python Dev</em>. Hey so I was working on maintaining the old project. Just found out that some of the dependencies don't even work on my MacOS version anymore. FML</li>
-<li><em>Corporate colleague using a Windows laptop</em>. Hey I'm trying to dockerize the project but it's haaard. Everything that works on my Windows laptop seems to fail on Linux. We should have done this earlier. Anyway: I think we should ask the PO for an extension for running the entire thing in production.</li>
-<li><em>Me</em>: Hii. Can you maybe run <code>pip show pyspark</code>? I'm curious which pyspark version you are running 🧐. Because if it works for you but not for me &amp; also not in the CI maybe your environment is different. Just checking.</li>
-<li><em>A fellow Data Scientist</em>. There weren't any docs on how to set up the correct venv right? Mine somehow got corrupted 🙃. It's saying &quot;No module named 'numpy'&quot; even though I seemingly have it installed. Not sure how to fix.</li>
+<li>PP: <strong>Petra the Python Dev.</strong> Hi my venv somehow got corrupted 🥲. It's saying <code>No module named 'numpy'</code>. even though I seemingly have it installed. Not sure how to fix.</li>
+</ol>
+<p>P.S. this is also why I was not in the meeting.</p>
+<ol>
+<li>EO: <strong>Erik the old project maintainer.</strong> Hey so I was working on maintaining the old project. Just found out that some of the dependencies don't even work on my MacOS version anymore. FML</li>
+<li>BW: <strong>Billy Windows.</strong> I'm trying to dockerize the project but it's haaard. Everything that works on my Windows laptop seems to fail on Linux.</li>
+<li>PU: <strong>PySpark user.</strong> Hii. Can you maybe run <code>pip show pyspark</code>? I'm curious which pyspark version you are running 🧐. Because if it works for you but not for me and also not in the CI maybe your environment is different than both. Just checking.</li>
+<li>JJ: <strong>Johnny Junior.</strong> Good day. I'm new at the company and wanted to get started working on the repo. Tried following the README steps but doesn't work. By any chance: are there more detailed docs available for the project setup? No right? 🙃</li>
 </ol>
 
 </div>
@@ -15025,72 +15040,73 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>🐛 Issues</p>
-<table>
+<table style="font-size: 110%;">
     <tr style="background: none" class="fragment">
-        <td>
+        <td style="border: none;">
             <div class="teams-avatar teams-background-1" style="top:0;">
-                JP
+                PP
             </div>
         </td>
-        <td style="color: #5b5b5b;">
-            John the Python Dev
+        <td style="border: none; color: #5b5b5b;">
+            Petra the Python Dev
         </td>
-        <td>
+        <td style="border: none;">
             Corrupted Virtual Environment<br>
         </td>
     </tr>
     <tr style="background: none" class="fragment">
-        <td>
+        <td style="border: none;">
             <div class="teams-avatar teams-background-2" style="top:0;">
                 EO
             </div>
         </td>
-        <td style="color: #5b5b5b;">
+        <td style="border: none; color: #5b5b5b;">
             Erik the old project maintainer
         </td>
-        <td>
+        <td style="border: none;">
             Outdated project dependencies<br>
         </td>
     </tr>
     <tr style="background: none" class="fragment">
-        <td>
+        <td style="border: none;">
             <div class="teams-avatar teams-background-3" style="top:0;">
-                MW
+                BW
             </div>
         </td>
-        <td style="color: #5b5b5b;">
-            Mr. Windows
+        <td style="border: none; color: #5b5b5b;">
+            Billy Windows
         </td>
-        <td>
+        <td style="border: none;">
             Containerisation & going into production
             <br><span style="color:#ccc;">e.g. Windows / Linux / MacOS</span>
         </td>
     </tr>
     <tr style="background: none" class="fragment">
-        <td>
+        <td style="border: none;">
             <div class="teams-avatar teams-background-4" style="top:0;">
-                PS
+                PU
             </div>
         </td>
-        <td style="color: #5b5b5b;">
+        <td style="border: none; color: #5b5b5b;">
             PySpark user
         </td>
-        <td>
+        <td style="border: none;">
             Inconsistent environments
             <br><span style="color:#ccc;">e.g. local ↔ CI ↔ prod ↔ team members</span>
         </td>
     </tr>
     <tr style="background: none" class="fragment">
-        <td>
+        <td style="border: none;">
             <div class="teams-avatar teams-background-5" style="top:0;">
-                DS
+                JJ
             </div>
         </td>
-        <td style="color: #5b5b5b;">
-            Data Scientist
+        <td style="border: none; color: #5b5b5b;">
+            Johnny Junior 
         </td>
-        <td>
-            No formal specification of install steps / missing docs 📚<br>
+        <td style="border: none;">
+            No formal specification of install steps
+            <br><span style="color:#ccc;">and missing docs 📚</span>
         </td>
     </tr>
 </table>
@@ -15105,8 +15121,9 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3>How to get a ...<br>
-🔄 <b>reproducible</b><br>Dev environment?</h3>
+<!-- <h3>How to get a ...<br> -->
+<!-- 🔄 <b>reproducible</b><br>Dev environment?</h3> -->
+<h3>🔄 How to get a <b>reproducible</b> Dev environment?</h3>
 
 </div>
 </div>
@@ -15129,7 +15146,59 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Docker</strong> helps us create a formal definition of our environment. <strong>Devcontainers</strong> allow you to connect your editor (IDE) to that container.</p>
+<p>🐳 <strong>Docker</strong> helps us create a formal definition of our environment.</p>
+<p>🔌 <strong>Devcontainers</strong> allow you to connect your editor (IDE) to that container.</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="./images/presentation/devcontainer-overview-4.webp" alt="Devcontainer overview" style="
+    margin: 0;
+"></p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table>
+<tr>
+<td width="70%" style="vertical-align: baseline;">
+<span style="color: #4d4d4d;" class="fragment">🔄 <b>Reproducible</b> means:</span>
+<ul>
+<li class="fragment">
+⚡️ Faster onboarding
+</li>
+<li class="fragment">
+👨‍👩‍👧‍👦 Better alignment between team members
+</li>
+<li class="fragment">
+⏱ Smaller gap to production
+</li>
+</ul>
+</td>
+<td width="30%" style="vertical-align: top;" class="fragment">
+<span style="color: #4d4d4d;">Downsides?</span>
+<ul>
+<li>
+Docker knowledge
+</li>
+</ul>
+</td>
+</tr>
+</table>
 
 </div>
 </div>
@@ -15152,40 +15221,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</aside>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><span style="color: #aaa;">📝 Note that this does mean running Docker images on your laptop (performance requirement).</span></p>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><span style="color: #4d4d4d;">Devcontainers can help us:</span></p>
-<ul>
-<li>🔄 Reproducible development environment</li>
-<li>⚡️ Faster project setup → faster onboarding</li>
-<li>👨‍👩‍👧‍👦 Better alignment between team members</li>
-<li>⏱ Forced to keep your dev environment up-to-date &amp; reproducible<ul>
-<li>→ saves your team time going into <strong>production</strong> later</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div></section></section><section ><section >
+</aside></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15344,7 +15380,7 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Open up the command pallete (<kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and select “<em>Dev Containers: Reopen in Container</em>”:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/reopen-in-devcontainer-notification.png" alt="Dev Containers: Reopen in Container" /></p>
+<p><img src="./images/presentation/reopen-in-devcontainer-notification.png" alt="Dev Containers: Reopen in Container" /></p>
 
 </div>
 </div>
@@ -15357,7 +15393,7 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Upon opening a repo with a valid <code>.devcontainer</code> folder, you are already notified:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/folder-contains-a-dev-container-config-file.png" alt="folder contains a dev container config file" /></p>
+<p><img src="./images/presentation/folder-contains-a-dev-container-config-file.png" alt="folder contains a dev container config file" /></p>
 
 </div>
 </div>
@@ -15371,7 +15407,7 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Your VSCode is now connected to the Docker container 🙌🏻:</p>
 <!-- ![VSCode is now connected to the Docker container](https://godatadriven.com/wp-content/uploads/2022/10/opening-the-devcontainer.gif) -->
-<img src="https://godatadriven.com/wp-content/uploads/2022/10/opening-the-devcontainer.gif" width="80%" alt="VSCode is now connected to the Docker container"/>
+<img src="./images/presentation/opening-the-devcontainer.gif" width="80%" alt="VSCode is now connected to the Docker container"/>
 
 </div>
 </div>
@@ -15384,6 +15420,36 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="What-is-happening-under-the-hood-%F0%9F%9A%97">What is happening under the hood &#128663;<a class="anchor-link" href="#What-is-happening-under-the-hood-%F0%9F%9A%97">&#182;</a></h3><p><span style="color: #ccc;">Besides starting the Docker image and attaching the terminal to it, VSCode is doing a couple more things:</span></p>
+<ol>
+    <li class="fragment"><b><a href="https://code.visualstudio.com/docs/remote/vscode-server">VSCode Server</a></b> is being installed on your Devcontainer.
+        <br><span style="color: #cecece;">VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. <br>For example, install and run <b>extensions</b>.</span>
+    </li>
+    <li class="fragment"><b>Config is copied</b> over.
+        <br><span style="color: #cecece;">Config like <code>~/.gitconfig</code> and <code>~/.ssh/known_hosts</code> are copied over to their respective locations in the container.</span>
+    </li>
+    <li class="fragment"><b>Filesystem mounts</b>. 
+        <br>
+        <span style="color: #cecece;">VSCode automatically takes care of mounting: 
+        <ul>
+            <li>The folder you are running the Devcontainer from.</li>
+            <li>Your VSCode workspace folder.</li>
+        </ul>
+        </span>
+    </li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><span style="color: #ccc;">Besides starting the Docker image and attaching the terminal to it, VSCode is doing a couple more things:</span></p>
 <ol>
     <li class="fragment"><b><a href="https://code.visualstudio.com/docs/remote/vscode-server">VSCode Server</a></b> is being installed on your Devcontainer.
         <br><span style="color: #aaa;">VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. <br>For example, install and run <b>extensions</b>.</span>
@@ -15405,7 +15471,8 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 </div>
 </div>
 </div>
-</div></section></section><section ><section >
+</div>
+</aside></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15432,15 +15499,6 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 &nbsp;&nbsp;&nbsp;&nbsp;https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template
 )
 </code></pre>
-<div class="fragment">
-Which basically means, open this URL:
-<pre class="markdown"><code data-line-numbers>vscode://
-&nbsp;&nbsp;ms-vscode-remote.remote-containers/
-&nbsp;&nbsp;cloneInVolume?
-&nbsp;&nbsp;url=https://github.com/godatadriven/python-devcontainer-template
-</code></pre>
-</div>
-<p><span style="color:#bbb;">Just modify the GitHub URL after <code>url=</code> ✓.</span></p>
 
 </div>
 </div>
@@ -15452,8 +15510,28 @@ Which basically means, open this URL:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Which basically means, open this URL:</p>
+<pre class="markdown"><code data-line-numbers>vscode://
+&nbsp;&nbsp;ms-vscode-remote.remote-containers/
+&nbsp;&nbsp;cloneInVolume?
+&nbsp;&nbsp;url=https://github.com/godatadriven/python-devcontainer-template
+</code></pre>
+<p><span style="color:#bbb;">Just modify the GitHub URL after <code>url=</code> ✓.</span></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>This renders the following button:</p>
-<p><a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template"><img src="https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode" alt="Open in Remote - Containers" /></a></p>
+<p><a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template"><img src="https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode" alt="Open in Remote - Containers" style="
+    width: 400px;
+"></a></p>
 
 </div>
 </div>
@@ -15475,8 +15553,8 @@ Which basically means, open this URL:
 </thead>
 <tbody>
 <tr>
-  <td style="text-align:center"><img src="https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-manual.png" alt="" /></td>
-  <td style="text-align:center"><img src="https://godatadriven.com/wp-content/uploads/2022/10/installation-instructions-devcontainer.png" alt="" /></td>
+  <td style="text-align:center; vertical-align: top;"><img src="./images/presentation/installation-instructions-manual.png" alt=""></td>
+  <td style="text-align:center;  vertical-align: top;"><img src="./images/presentation/installation-instructions-devcontainer.png" alt=""></td>
 </tr>
 </tbody>
 </table>
@@ -15721,7 +15799,7 @@ USER $USERNAME
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>When we now run our code, we get a notification we can open Spark UI in the browser:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/application-running-on-port-4040.png" alt="open Spark UI in the browser" /></p>
+<p><img src="./images/presentation/application-running-on-port-4040.png" alt="open Spark UI in the browser" /></p>
 
 </div>
 </div>
@@ -15734,7 +15812,7 @@ USER $USERNAME
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Resulting in the Spark UI like we know it:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/spark-ui-visible-in-localhost-4040.png" alt="spark UI in the browser" /></p>
+<img src="./images/presentation/spark-ui-visible-in-localhost-4040.png" alt="spark UI in the browser" style="width: 80%; margin: 0;" >
 <p>✨</p>
 
 </div>
@@ -15856,7 +15934,7 @@ jobs:
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>See below a trace of the executed GitHub Action:</p>
-<p><img src="https://godatadriven.com/wp-content/uploads/2022/10/running-ci-in-the-devcontainer-github-actions.png" alt="running-ci-in-the-devcontainer-github-actions" /></p>
+<img src="./images/presentation/running-ci-in-the-devcontainer-github-actions.png" alt="running-ci-in-the-devcontainer-github-actions" style="width: 90%">
 <p>Awesome!</p>
 
 </div>
@@ -15982,31 +16060,6 @@ jobs:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Three-environments-%F0%9F%8E%81">Three environments &#127873;<a class="anchor-link" href="#Three-environments-%F0%9F%8E%81">&#182;</a></h2><p><span style="color:#aaa;">The above idea sets us up for having 3 different images for our entire lifecycle. One for Development, one for CI, and finally one for production.</span></p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="./images/presentation/three-environments.png" alt="three-environments-docker-images-devcontainer" /></p>
-<!-- https://excalidraw.com/#json=xiyT30e-6fLScXqtXOx9-,pqW03Hw6D6FFb-0Q06VTQw -->
-
-</div>
-</div>
-</div>
-</div></div></section></section><section ><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Going-further-%F0%9F%94%AE">Going further &#128302;<a class="anchor-link" href="#Going-further-%F0%9F%94%AE">&#182;</a></h2>
 </div>
 </div>
@@ -16019,7 +16072,9 @@ jobs:
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Devcontainer <a href="https://containers.dev/features">features</a></li>
+<li><p><a href="https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount">Mounting directories </a></p>
+<p>💡 Pro tip: mount your AWS/GCP/Azure credentials</p>
+</li>
 </ul>
 
 </div>
@@ -16047,11 +16102,36 @@ jobs:
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li><p><a href="https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount">Mounting directories </a></p>
-<p>💡 Pro tip: mount your AWS/GCP/Azure credentials</p>
+<li>Devcontainer <a href="https://containers.dev/features">features</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><p><strong>Remote Development 🌐</strong></p>
+<p>e.g. GitHub Codespaces, VM's on Azure/GCP/AWS</p>
 </li>
 </ul>
-<p>... and much more:</p>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>... and much more (see references slide)</p>
 
 </div>
 </div>
@@ -16063,16 +16143,7 @@ jobs:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Concluding">Concluding<a class="anchor-link" href="#Concluding">&#182;</a></h2><p>Devcontainers have proven useful to:</p>
-<ul>
-<li>🔄 Reproducible development environment</li>
-<li>⚡️ Faster project setup → faster onboarding</li>
-<li>👨‍👩‍👧‍👦 Better alignment between team members</li>
-<li>⏱ Forced to keep your dev environment up-to-date &amp; reproducible<ul>
-<li>→ saves your team time going into <strong>production</strong> later</li>
-</ul>
-</li>
-</ul>
+<h2 id="Concluding">Concluding<a class="anchor-link" href="#Concluding">&#182;</a></h2><p>🔌 <strong>Devcontainers</strong> connect your IDE to a running 🐳 Docker container.</p>
 
 </div>
 </div>
@@ -16084,7 +16155,90 @@ jobs:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>→ <em>reproducibility</em> &amp; <em>isolation</em> whilst getting a <em>native</em> experience.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table>
+<tr>
+<td width="70%" style="vertical-align: baseline;">
+<span style="color: #4d4d4d;" class="fragment">🔄 <b>Reproducible</b> means:</span>
+<ul>
+<li class="fragment">
+⚡️ Faster onboarding
+</li>
+<li class="fragment">
+👨‍👩‍👧‍👦 Better alignment between team members
+</li>
+<li class="fragment">
+⏱ Smaller gap to production
+</li>
+</ul>
+</td>
+<td width="30%" style="vertical-align: top;"  >
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now only VSCode, but <a href="https://containers.dev/">open specification</a> taking shape.</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3>🤝</h3>
+<div class="teams-avatar teams-avatar-big teams-background-1" style="top:0;left:50px; opacity:0.5;">
+    PP
+</div>
+<div class="teams-avatar teams-avatar-big teams-background-2" style="top:0;left:50px; opacity:0.5;">
+    EO
+</div>
+<br>
+<div class="teams-avatar teams-avatar-big teams-background-3" style="top:0; opacity:0.5;">
+    BW
+</div>
+<div class="teams-avatar teams-avatar-big teams-background-4" style="top:0; opacity:0.5;">
+    PU
+</div>
+<div class="teams-avatar teams-avatar-big teams-background-5" style="top:0; opacity:0.5;">
+    JJ
+</div>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1>🫵</h1>
 
 </div>
 </div>
@@ -16120,13 +16274,30 @@ jobs:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Awesome-resources">Awesome resources<a class="anchor-link" href="#Awesome-resources">&#182;</a></h3><ul>
-<li><a href="https://github.com/devcontainers/ci">devcontainers/ci</a>. Run your CI in your Devcontainers. Built on the <a href="https://github.com/devcontainers/cli">Devcontainer CLI</a>.</li>
-<li><a href="https://containers.dev/">https://containers.dev/</a>. The official Devcontainer specification.</li>
-<li><a href="https://github.com/devcontainers/images">devcontainers/images</a>. A collection of ready-to-use Devcontainer images.</li>
+<h3 id="Awesome-resources">Awesome resources<a class="anchor-link" href="#Awesome-resources">&#182;</a></h3><p>Associated blog post:</p>
+<ul>
+<li><a href="https://godatadriven.com/blog/how-to-create-a-devcontainer-for-your-python-project-%F0%9F%90%B3/">How to create a Devcontainer for your Python project 🐳</a></li>
+</ul>
+<p>Docs:</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers VSCode extension</a>. The extension required to connect VSCode to a Devcontainer.</li>
+<li><a href="https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount">Mounting file directories</a> in Devcontainers.</li>
 <li><a href="https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user">Add a non-root user to a container</a>. More explanations &amp; instructions for adding a non-root user to your <code>Dockerfile</code> and <code>devcontainer.json</code>.</li>
 <li><a href="https://code.visualstudio.com/docs/remote/containers#_prebuilding-dev-container-images">Pre-building dev container images</a></li>
-<li><a href="https://github.com/manekinekko/awesome-devcontainers">awesome-devcontainers</a>. A repo pointing to yet even more awesome resources.</li>
+</ul>
+<p>Spec:</p>
+<ul>
+<li><a href="https://containers.dev/">containers.dev</a>. The official Devcontainer specification.<ul>
+<li><a href="https://containers.dev/templates">Devcontainer templates</a></li>
+<li><a href="https://containers.dev/features">Devcontainer features</a></li>
+</ul>
+</li>
+</ul>
+<p>Repo's:</p>
+<ul>
+<li><a href="https://github.com/devcontainers/ci">github.com/devcontainers/ci</a>. Run your CI in your Devcontainers. Built on the <a href="https://github.com/devcontainers/cli">Devcontainer CLI</a>.</li>
+<li><a href="https://github.com/devcontainers/images">github.com/devcontainers/images</a>. A collection of ready-to-use Devcontainer images.</li>
+<li><a href="https://github.com/manekinekko/awesome-devcontainers">github.com/manekinekko/awesome-devcontainers</a>. A repo pointing to yet even more awesome resources.</li>
 </ul>
 
 </div>
