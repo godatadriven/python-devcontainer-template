@@ -14798,7 +14798,19 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table>
+<p><img src="images/presentation/logo-spark.png" alt="Apache Spark" width="200px" class="fragment" data-fragment-index="0" style="
+    display: inline-block;
+    margin-right: 3%;
+    margin-left: 6%;
+">
+<img src="images/presentation/logo-pyspark.png" alt="Apache Spark - pyspark" width="200px" class="fragment" data-fragment-index="1" style="
+    display: inline-block;
+    margin-right: 3%;
+">
+<img src="images/presentation/logo-python.png" alt="Python" width="200px" class="fragment" data-fragment-index="2" style="
+    display: inline-block;
+"></p>
+<!-- <table>
 <tr>
 <td>
 <img src="images/presentation/logo-spark.png" alt="Apache Spark" width="200px" class="fragment" />
@@ -14810,7 +14822,7 @@ div.jp-OutputPrompt {
 <img src="images/presentation/logo-python.png" alt="Python" width="200px" class="fragment" />
 </td>
 </tr>
-</table>
+</table> -->
 
 </div>
 </div>
@@ -15490,7 +15502,7 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Helping out:</p>
 <table style="font-size: 110%;">
-    <tr style="background: none" class="fragment">
+    <tr style="background: none">
         <td style="border: none;">
             <div class="teams-avatar teams-background-1" style="top:0;">
                 PP
@@ -15548,13 +15560,13 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><span style="color: #ccc;">Besides starting the Docker image and attaching the terminal to it, VSCode is doing a couple more things:</span></p>
 <ol>
-    <li class="fragment"><b><a href="https://code.visualstudio.com/docs/remote/vscode-server">VSCode Server</a></b> is being installed on your Devcontainer.
+    <li><b><a href="https://code.visualstudio.com/docs/remote/vscode-server">VSCode Server</a></b> is being installed on your Devcontainer.
         <br><span style="color: #aaa;">VSCode Server is installed as a service in the container itself so your VSCode installation can communicate with the container. <br>For example, install and run <b>extensions</b>.</span>
     </li>
-    <li class="fragment"><b>Config is copied</b> over.
+    <li><b>Config is copied</b> over.
         <br><span style="color: #aaa;">Config like <code>~/.gitconfig</code> and <code>~/.ssh/known_hosts</code> are copied over to their respective locations in the container.</span>
     </li>
-    <li class="fragment"><b>Filesystem mounts</b>. 
+    <li><b>Filesystem mounts</b>. 
         <br>
         <span style="color: #aaa;">VSCode automatically takes care of mounting: 
         <ul>
@@ -15640,7 +15652,8 @@ RUN pip install -r /tmp/requirements-dev.txt && \
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>What kind of README would you rather like?</p>
+<!-- What kind of README would you rather like?
+
 <table>
 <thead>
 <tr>
@@ -15654,7 +15667,18 @@ RUN pip install -r /tmp/requirements-dev.txt && \
   <td style="text-align:center;  vertical-align: top;"><img src="./images/presentation/installation-instructions-devcontainer.png" alt=""></td>
 </tr>
 </tbody>
-</table>
+</table> -->
+<p>What kind of README would you rather like?</p>
+<img src="./images/presentation/installation-instructions-manual.png" alt="" style="
+    width: 49%;
+    display: inline-block;
+    margin: 0;
+"><img src="./images/presentation/installation-instructions-devcontainer.png" alt="" style="
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    margin: 0;
+">
 
 </div>
 </div>
@@ -15839,7 +15863,8 @@ USER $USERNAME
 </div>
 </div>
 </div>
-</div>
+</div><aside class="notes">
+
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15865,7 +15890,8 @@ USER $USERNAME
 </div>
 </div>
 </div>
-</div><aside class="notes">
+</div>
+</aside><aside class="notes">
 
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15935,8 +15961,7 @@ USER $USERNAME
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Resulting in the Spark UI like we know it:</p>
-<img src="./images/presentation/spark-ui-visible-in-localhost-4040.png" alt="spark UI in the browser" style="width: 80%; margin: 0;" >
-<p>✨</p>
+<img src="./images/presentation/spark-ui-visible-in-localhost-4040.png" alt="spark UI in the browser" style="width: 70%; margin: 0;" >
 
 </div>
 </div>
@@ -16403,7 +16428,13 @@ jobs:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">Thanks! &#128588;&#127995;<a class="anchor-link" href="#Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">&#182;</a></h2><table>
+<h2 id="Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">Thanks! &#128588;&#127995;<a class="anchor-link" href="#Thanks!-%F0%9F%99%8C%F0%9F%8F%BB">&#182;</a></h2><div style="text-align: center;">
+<img src="./images/presentation/qrcode_github_repo.png" alt="python-devcontainer-template github QR code link" width="400px" /><br>
+<span style="text-align:center;">
+<a href="https://github.com/godatadriven/python-devcontainer-template">github.com/godatadriven/python-devcontainer-template</a>
+</span>
+</div>
+<!-- <table>
 <tr>
 <td width="40%">
 <img src="./images/presentation/cat.gif" alt="moving cat gif" />
@@ -16415,12 +16446,23 @@ jobs:
 </span>
 </td>
 </tr>
-</table>
+</table> -->
+<!-- <p>What kind of README would you rather like?</p>
+<img src="./images/presentation/cat.gif" alt="" style="
+    width: 49%;
+    display: inline-block;
+    margin: 0;
+"><img src="./images/presentation/installation-instructions-devcontainer.png" alt="" style="
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    margin: 0;
+"> -->
 
 </div>
 </div>
 </div>
-</div></section><section >
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16443,7 +16485,7 @@ jobs:
 </div>
 </div>
 </div>
-</div>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
