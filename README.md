@@ -57,6 +57,7 @@ This repo was mentioned at the following places:
 
 - [Talk @ GoDataFest](https://godatafest.com/broadcasts/devcontainers-containerize-your-development-setup/), 26th of October [[talk slides](https://godatadriven.github.io/python-devcontainer-template/#/)]
 - [Blogpost @ godatadriven.com](https://godatadriven.com/blog/how-to-create-a-devcontainer-for-your-python-project-%F0%9F%90%B3/), 21st of November
+- [Talk @ PyData Eindhoven](https://www.youtube.com/watch?v=SLsaCdRAV0U)
 
 ---
 
