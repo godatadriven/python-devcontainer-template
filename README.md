@@ -27,7 +27,7 @@ Then, there's 2 options:
 
 1. Click _Use this template_ to create a new repo.
 
-    <a href="https://github.com/godatadriven/python-devcontainer-template/generate"><img alt="use this template GitHub button" src="https://camo.githubusercontent.com/523d7e81c3d3dcd01b711f14c87e850edeb8e62bf72814d3231ab084a0c70d31/68747470733a2f2f7777772e726f737472756d2e626c6f672f706f73742f323031392d30362d31312d612d7265706f2d74656d706c6174652d666f722d722d616e616c797369735f66696c65732f7573652d746869732e706e67" width="150px" /></a>
+    <a href="https://github.com/godatadriven/python-devcontainer-template/generate"><img alt="use this template GitHub button" src="https://github.com/godatadriven/python-devcontainer-template/assets/744430/8cb7bc77-af79-41cd-b9da-5625e7ba843e" width="150px" /></a>
 
 1. **Clone** the repo and open it in **VSCode**.
 
@@ -42,7 +42,7 @@ That's it 🙌🏻 Enjoy developing.
 
 ### Using the button
 
-Another option is to open this repo in VSCode right away. Press the following button:
+Another option is to open this repo in VSCode using a special _link_. Press the following button:
 
 [![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
 
@@ -62,4 +62,4 @@ This repo was mentioned at the following places:
 ---
 
 
-Created by [Jeroen Overschie](https://www.github.com/dunnkers), working at [GoDataDriven](https://godatadriven.com/). A leading Data and AI consultancy company in The Netherlands
+Created by [Jeroen Overschie](https://www.github.com/dunnkers), working at [Xebia Data](https://xebia.com/). A leading Data and AI consultancy company in The Netherlands.
